@@ -151,16 +151,16 @@ Every concept is immediately applied in working applications:
 *Master data flow and reactivity*
 
 #### **Lesson 10: setState & Stateful Widgets**
-- **Concepts**: Local state, lifting state up, widget lifecycle
-- **Workshop**: Counter app variations
-- **Project**: Interactive calculator
-- **Duration**: 45 minutes
+- **Concepts**: Complete StatefulWidget lifecycle, setState patterns, state architecture, performance optimization, clean patterns, resource management
+- **Workshop**: Comprehensive task management application with lifecycle monitoring and performance tracking
+- **Project**: Professional task manager demonstrating all setState patterns with clean architecture and testing
+- **Duration**: 75 minutes
 
 #### **Lesson 11: InheritedWidget & Provider**
-- **Concepts**: Widget dependency injection, context usage
-- **Workshop**: Shopping cart application
-- **Project**: Multi-widget state sharing
-- **Duration**: 60 minutes
+- **Concepts**: InheritedWidget fundamentals, Provider patterns, ChangeNotifier reactive state, dependency injection, context operations, performance optimization with Consumer/Selector
+- **Workshop**: Comprehensive e-commerce shopping application with product catalog, cart management, and user profiles
+- **Project**: Professional shopping app demonstrating shared state management from InheritedWidget to Provider with clean architecture
+- **Duration**: 90 minutes
 
 #### **Lesson 12: Riverpod 2.0 (Recommended)**
 - **Concepts**: Modern state management, providers, async states
