@@ -63,7 +63,7 @@ Connect to APIs and persist data
 
 | Lesson | Topic | Duration | Project |
 |--------|--------|----------|---------|
-| [16](modules/lesson_16/) | Networking with Dio & Retrofit | 75 min | API client setup |
+| [16](modules/lesson_16/) | Networking with Dio & Retrofit | 270 min | Professional news app with advanced networking, caching, and offline support |
 | [17](modules/lesson_17/) | Local Storage (Hive/SQLite) | 60 min | Offline note app |
 | [18](modules/lesson_18/) | **Project**: News App | 150 min | Full API + cache app |
 
@@ -162,7 +162,7 @@ Track your progress with our built-in checklist:
 - [x] **Phase 1 Complete** - Flutter fundamentals mastered
 - [x] **Phase 2 Complete** - UI/UX skills developed  
 - [x] **Phase 3 Complete** - State management expertise
-- [ ] **Phase 4 Complete** - Data integration skills
+- [ ] **Phase 4 In Progress** - Data integration skills
 - [ ] **Phase 5 Complete** - Cloud development ready
 - [ ] **Phase 6 Complete** - Production deployment capable
 - [ ] **Capstone Complete** - Expert-level project finished

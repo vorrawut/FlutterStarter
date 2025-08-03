@@ -190,10 +190,10 @@ Every concept is immediately applied in working applications:
 *Connect to APIs and persist data*
 
 #### **Lesson 16: Networking with Dio & Retrofit**
-- **Concepts**: HTTP clients, interceptors, error handling
-- **Workshop**: API client setup
-- **Project**: RESTful service integration
-- **Duration**: 75 minutes
+- **Concepts**: Advanced Dio configuration with interceptors, Retrofit pattern implementation, comprehensive error handling strategies, intelligent caching and offline support, authentication integration with automatic token refresh, certificate pinning and security best practices, performance optimization and monitoring
+- **Workshop**: Complete NewsFlow Pro application with professional networking architecture - advanced Dio setup with authentication, caching, retry, and logging interceptors, Retrofit pattern API services with type safety, repository pattern with offline-first capabilities, multi-level intelligent caching system
+- **Project**: Production-ready news application demonstrating professional networking patterns, comprehensive error handling, intelligent offline support, secure authentication flows, performance optimization, and comprehensive testing coverage
+- **Duration**: 270 minutes
 
 #### **Lesson 17: Local Storage (Hive/SQLite)**
 - **Concepts**: Data persistence, caching strategies, offline support
