@@ -44,7 +44,7 @@ Create beautiful, responsive interfaces
 | [06](modules/lesson_06/) | Navigation & Routing | 90 min | Professional e-commerce navigation |
 | [07](modules/lesson_07/) | Theming Your App | 90 min | Material 3 theming with accessibility |
 | [08](modules/lesson_08/) | Responsive Layouts | 90 min | Adaptive dashboard with breakpoints |
-| [09](modules/lesson_09/) | Flutter Animations | 75 min | Animated onboarding |
+| [09](modules/lesson_09/) | Flutter Animations | 90 min | Animated onboarding with hero transitions |
 
 ### 🟡 **Phase 3: State Management (Lessons 10-15)**
 Master data flow and reactivity
@@ -160,7 +160,7 @@ From day one, learn practices that scale to real applications.
 Track your progress with our built-in checklist:
 
 - [x] **Phase 1 Complete** - Flutter fundamentals mastered
-- [ ] **Phase 2 Complete** - UI/UX skills developed  
+- [x] **Phase 2 Complete** - UI/UX skills developed  
 - [ ] **Phase 3 Complete** - State management expertise
 - [ ] **Phase 4 Complete** - Data integration skills
 - [ ] **Phase 5 Complete** - Cloud development ready

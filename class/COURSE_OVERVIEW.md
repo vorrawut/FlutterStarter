@@ -142,10 +142,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 90 minutes
 
 #### **Lesson 9: Flutter Animations**
-- **Concepts**: Animation controllers, tweens, hero animations
-- **Workshop**: Animated onboarding flow
-- **Project**: Interactive animation showcase
-- **Duration**: 75 minutes
+- **Concepts**: Animation controllers, custom curves, hero animations, staggered sequences, physics-based motion, performance optimization
+- **Workshop**: Comprehensive animated onboarding experience with coordinated animation sequences
+- **Project**: Professional onboarding flow with hero transitions, micro-interactions, and 60fps performance
+- **Duration**: 90 minutes
 
 ### **🟡 Phase 3: State Management (Lessons 10-15)**
 *Master data flow and reactivity*
