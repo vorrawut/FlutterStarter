@@ -54,7 +54,7 @@ flutter_starter/class/
 - ✅ **Lesson 10**: setState & Stateful Widgets with lifecycle mastery and clean architecture
 - ✅ **Lesson 11**: InheritedWidget & Provider with comprehensive e-commerce shopping app and shared state patterns
 - ✅ **Lesson 12**: Riverpod 2.0 with advanced todo app, type safety, AsyncValue patterns, and comprehensive testing
-- 📋 Bloc & Cubit event-driven architecture
+- ✅ **Lesson 13**: Bloc & Cubit with professional weather app, event-driven architecture, and comprehensive business logic separation
 - 📋 State pattern comparison & selection
 - 📋 Authentication & theme integration project
 

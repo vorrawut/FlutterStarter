@@ -169,10 +169,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 120 minutes
 
 #### **Lesson 13: Bloc & Cubit**
-- **Concepts**: Event-driven architecture, business logic separation
-- **Workshop**: Weather application
-- **Project**: Complex state management
-- **Duration**: 90 minutes
+- **Concepts**: Event-driven architecture, business logic separation, Bloc vs Cubit patterns, event handlers, state composition, auto-refresh, stream subscriptions, comprehensive testing with bloc_test
+- **Workshop**: Professional weather application with location services, real-time updates, offline support, and Bloc-to-Bloc communication
+- **Project**: Comprehensive weather app demonstrating advanced event-driven architecture with clean separation of business logic and comprehensive testing coverage
+- **Duration**: 120 minutes
 
 #### **Lesson 14: State Management Comparison**
 - **Concepts**: Choosing the right pattern, architecture decisions

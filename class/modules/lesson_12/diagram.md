@@ -451,8 +451,8 @@ graph LR
 flowchart TD
     A[Provider Access] --> B{Read or Watch?}
     
-    B -->|Read| C[context.read()]
-    B -->|Watch| D[ref.watch()]
+    B -->|Read| C["context.read()"]
+    B -->|Watch| D["ref.watch()"]
     
     C --> E[No Rebuilds]
     D --> F[Automatic Rebuilds]
@@ -625,8 +625,8 @@ graph TB
 flowchart TD
     A[Async Operation] --> B{Success?}
     
-    B -->|Yes| C[AsyncValue.data()]
-    B -->|No| D[AsyncValue.error()]
+    B -->|Yes| C["AsyncValue.data()"]
+    B -->|No| D["AsyncValue.error()"]
     
     C --> E[Update UI with Data]
     D --> F[Show Error State]

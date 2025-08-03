@@ -54,7 +54,7 @@ Master data flow and reactivity
 | [10](modules/lesson_10/) | setState & Stateful Widgets | 75 min | Task management with lifecycle mastery |
 | [11](modules/lesson_11/) | InheritedWidget & Provider | 90 min | E-commerce shopping app with shared state |
 | [12](modules/lesson_12/) | Riverpod 2.0 (Recommended) | 120 min | Advanced todo app with cloud sync and type safety |
-| [13](modules/lesson_13/) | Bloc & Cubit | 90 min | Weather app |
+| [13](modules/lesson_13/) | Bloc & Cubit | 120 min | Professional weather app with event-driven architecture |
 | [14](modules/lesson_14/) | State Management Comparison | 45 min | Architecture decisions |
 | [15](modules/lesson_15/) | **Mini Project**: Auth + Theme App | 120 min | Complete auth flow |
 
