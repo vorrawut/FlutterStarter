@@ -512,7 +512,7 @@ graph LR
 
 ```mermaid
 graph TD
-    A[main()] --> B[MaterialApp Root]
+    A["main()"] --> B[MaterialApp Root]
     B --> C[MultiProvider]
     
     C --> D[ShoppingCartProvider]
@@ -528,8 +528,8 @@ graph TD
     C --> I[Child Widget Tree]
     I --> J[Any Widget Can Access Providers]
     
-    J --> K[context.read<Provider>()]
-    J --> L[context.watch<Provider>()]
+    J --> K["context.read<Provider>()"]
+    J --> L["context.watch<Provider>()"]
     J --> M[Consumer<Provider>]
     J --> N[Selector<Provider, T>]
     

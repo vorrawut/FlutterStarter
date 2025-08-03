@@ -175,10 +175,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 120 minutes
 
 #### **Lesson 14: State Management Comparison**
-- **Concepts**: Choosing the right pattern, architecture decisions
-- **Workshop**: Refactoring exercises
-- **Project**: Architecture documentation
-- **Duration**: 45 minutes
+- **Concepts**: Comprehensive pattern analysis, SCALE decision framework, performance benchmarking, migration strategies, team guidelines development, architectural decision making
+- **Workshop**: Multi-pattern todo implementation, performance analysis laboratory, decision framework development, migration playground with systematic pattern transitions
+- **Project**: Complete comparison analysis with performance benchmarks, interactive decision support system, and comprehensive team guidelines for architectural decisions
+- **Duration**: 90 minutes
 
 #### **Lesson 15: Mini Project - Auth + Theme App**
 - **Concepts**: Integration of all state management concepts
