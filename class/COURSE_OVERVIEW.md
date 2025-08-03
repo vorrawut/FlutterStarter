@@ -163,10 +163,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 90 minutes
 
 #### **Lesson 12: Riverpod 2.0 (Recommended)**
-- **Concepts**: Modern state management, providers, async states
-- **Workshop**: Todo app with cloud sync
-- **Project**: Complete task management
-- **Duration**: 90 minutes
+- **Concepts**: Advanced state management evolution, provider types (StateNotifier, Future, Stream), AsyncValue patterns, provider modifiers (autoDispose, family), compile-time safety, comprehensive testing with ProviderContainer
+- **Workshop**: Production-ready todo application with cloud synchronization, real-time updates, advanced filtering, and optimistic updates
+- **Project**: Comprehensive todo app demonstrating all Riverpod patterns with type safety, async excellence, and clean architecture
+- **Duration**: 120 minutes
 
 #### **Lesson 13: Bloc & Cubit**
 - **Concepts**: Event-driven architecture, business logic separation
