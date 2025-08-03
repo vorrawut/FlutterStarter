@@ -41,9 +41,9 @@ Create beautiful, responsive interfaces
 
 | Lesson | Topic | Duration | Project |
 |--------|--------|----------|---------|
-| [06](modules/lesson_06/) | Navigation & Routing | 75 min | Multi-screen app |
-| [07](modules/lesson_07/) | Theming Your App | 60 min | Dark/light mode toggle |
-| [08](modules/lesson_08/) | Responsive Layouts | 90 min | Adaptive dashboard |
+| [06](modules/lesson_06/) | Navigation & Routing | 90 min | Professional e-commerce navigation |
+| [07](modules/lesson_07/) | Theming Your App | 90 min | Material 3 theming with accessibility |
+| [08](modules/lesson_08/) | Responsive Layouts | 90 min | Adaptive dashboard with breakpoints |
 | [09](modules/lesson_09/) | Flutter Animations | 75 min | Animated onboarding |
 
 ### 🟡 **Phase 3: State Management (Lessons 10-15)**

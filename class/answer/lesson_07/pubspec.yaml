@@ -1,0 +1,142 @@
+name: lesson_07_theming
+description: "Lesson 7: Professional Flutter theming system with Material 3, clean architecture, and comprehensive accessibility features."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  provider: ^6.1.1
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # Value Equality
+  equatable: ^2.0.5
+  
+  # Navigation
+  go_router: ^12.1.3
+  
+  # Material Design Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Linting
+  flutter_lints: ^3.0.1
+  
+  # Testing
+  mockito: ^5.4.4
+  build_runner: ^2.4.7
+  
+  # Golden file testing
+  golden_test: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Fonts
+  fonts:
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SFProDisplay-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SFProDisplay-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SFProDisplay-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/SFProDisplay-Bold.otf
+          weight: 700
+
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
+
+# Analyzer configuration for clean code
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  
+  language:
+    strict-inference: true
+    strict-raw-types: true
+
+  errors:
+    # Treat all analyzer warnings as errors
+    missing_required_param: error
+    missing_return: error
+    dead_code: warning
+    unused_import: warning
+    unused_local_variable: warning
+    
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+linter:
+  rules:
+    # Core rules
+    - avoid_print
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - prefer_const_declarations
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_final_in_for_each
+    - unnecessary_const
+    - unnecessary_new
+    
+    # Style rules
+    - camel_case_types
+    - camel_case_extensions
+    - file_names
+    - non_constant_identifier_names
+    - constant_identifier_names
+    
+    # Documentation
+    - package_api_docs
+    - public_member_api_docs
+    
+    # Design
+    - avoid_classes_with_only_static_members
+    - avoid_function_literals_in_foreach_calls
+    - avoid_null_checks_in_equality_operators
+    - avoid_positional_boolean_parameters
+    - avoid_returning_null_for_void
+    - avoid_unused_constructor_parameters
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_for_elements_to_map_fromIterable
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_single_quotes
+    - prefer_spread_collections
+    
+    # Errors
+    - close_sinks
+    - cancel_subscriptions
+    - control_flow_in_finally
+    - empty_statements
+    - hash_and_equals
+    - test_types_in_equals
+    - throw_in_finally
+    - unrelated_type_equality_checks
+    - valid_regexps
+    
+    # Pub
+    - depend_on_referenced_packages
+    - package_names
+    - secure_pubspec_urls
+    - sort_pub_dependencies

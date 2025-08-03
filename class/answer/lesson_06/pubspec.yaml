@@ -1,0 +1,49 @@
+name: fluttershop_navigation
+description: Professional Navigation & Routing with Clean Architecture
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Navigation
+  go_router: ^12.1.3
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Value Equality
+  equatable: ^2.0.5
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # HTTP Client (for future API integration)
+  http: ^1.1.2
+  
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  
+  # Testing
+  mockito: ^5.4.4
+  build_runner: ^2.4.7
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/

@@ -124,21 +124,21 @@ Every concept is immediately applied in working applications:
 *Create beautiful, responsive interfaces*
 
 #### **Lesson 6: Navigation & Routing**
-- **Concepts**: Navigator 2.0, route management, deep linking
-- **Workshop**: Multi-screen application
-- **Project**: Complete navigation flow
-- **Duration**: 75 minutes
+- **Concepts**: GoRouter, route guards, authentication integration, clean navigation architecture
+- **Workshop**: Professional e-commerce navigation system with authentication
+- **Project**: Complete multi-screen app with deep linking and route protection
+- **Duration**: 90 minutes
 
 #### **Lesson 7: Theming Your App**
-- **Concepts**: Material 3, custom themes, dark mode
-- **Workshop**: Theme switcher application
-- **Project**: Brand-consistent design system
-- **Duration**: 60 minutes
+- **Concepts**: Material 3 design system, dynamic colors, theme extensions, accessibility theming
+- **Workshop**: Comprehensive theming system with clean architecture and user customization
+- **Project**: Professional theme management with Material 3, dark/light modes, and accessibility features
+- **Duration**: 90 minutes
 
 #### **Lesson 8: Responsive Layouts**
-- **Concepts**: MediaQuery, LayoutBuilder, adaptive design
-- **Workshop**: Multi-platform dashboard
-- **Project**: Responsive admin panel
+- **Concepts**: Professional breakpoint systems, adaptive navigation patterns, responsive grid systems, clean architecture for responsive design
+- **Workshop**: Comprehensive adaptive dashboard with mobile/tablet/desktop layouts
+- **Project**: Multi-platform dashboard with adaptive navigation, responsive grids, and performance optimization
 - **Duration**: 90 minutes
 
 #### **Lesson 9: Flutter Animations**
