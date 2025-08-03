@@ -34,7 +34,7 @@ Build your fundamental Flutter knowledge
 | [02](modules/lesson_02/) | Dev Environment Setup | 45 min | First "Hello World" |
 | [03](modules/lesson_03/) | Dart Fundamentals | 60 min | Data types playground |
 | [04](modules/lesson_04/) | Widgets 101 | 90 min | Interactive widget gallery |
-| [05](modules/lesson_05/) | Layouts & UI Composition | 90 min | Profile card app |
+| [05](modules/lesson_05/) | Layouts & UI Composition | 90 min | Advanced layout masterclass |
 
 ### 🔵 **Phase 2: UI Mastery (Lessons 6-9)**
 Create beautiful, responsive interfaces
@@ -159,7 +159,7 @@ From day one, learn practices that scale to real applications.
 
 Track your progress with our built-in checklist:
 
-- [ ] **Phase 1 Complete** - Flutter fundamentals mastered
+- [x] **Phase 1 Complete** - Flutter fundamentals mastered
 - [ ] **Phase 2 Complete** - UI/UX skills developed  
 - [ ] **Phase 3 Complete** - State management expertise
 - [ ] **Phase 4 Complete** - Data integration skills

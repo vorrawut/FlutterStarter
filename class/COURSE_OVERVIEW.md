@@ -115,9 +115,9 @@ Every concept is immediately applied in working applications:
 - **Duration**: 90 minutes
 
 #### **Lesson 5: Layouts & UI Composition**
-- **Concepts**: Flexbox model, layout widgets, responsive design
-- **Workshop**: Profile card with complex layout
-- **Project**: Business card app
+- **Concepts**: Advanced constraint systems, responsive design, professional layout patterns
+- **Workshop**: Advanced layout masterclass with multiple card styles
+- **Project**: Professional profile card gallery with responsive design
 - **Duration**: 90 minutes
 
 ### **🔵 Phase 2: UI Mastery (Lessons 6-9)**
