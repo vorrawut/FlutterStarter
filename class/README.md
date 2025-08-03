@@ -56,7 +56,7 @@ Master data flow and reactivity
 | [12](modules/lesson_12/) | Riverpod 2.0 (Recommended) | 120 min | Advanced todo app with cloud sync and type safety |
 | [13](modules/lesson_13/) | Bloc & Cubit | 120 min | Professional weather app with event-driven architecture |
 | [14](modules/lesson_14/) | State Management Comparison | 90 min | Comprehensive pattern analysis and decision framework |
-| [15](modules/lesson_15/) | **Mini Project**: Auth + Theme App | 120 min | Complete auth flow |
+| [15](modules/lesson_15/) | **Mini Project**: Auth + Theme App | 240 min | Hybrid state management with complete auth and theme system |
 
 ### 🟠 **Phase 4: Data & Storage (Lessons 16-18)**
 Connect to APIs and persist data
@@ -161,7 +161,7 @@ Track your progress with our built-in checklist:
 
 - [x] **Phase 1 Complete** - Flutter fundamentals mastered
 - [x] **Phase 2 Complete** - UI/UX skills developed  
-- [ ] **Phase 3 Complete** - State management expertise
+- [x] **Phase 3 Complete** - State management expertise
 - [ ] **Phase 4 Complete** - Data integration skills
 - [ ] **Phase 5 Complete** - Cloud development ready
 - [ ] **Phase 6 Complete** - Production deployment capable

@@ -181,10 +181,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 90 minutes
 
 #### **Lesson 15: Mini Project - Auth + Theme App**
-- **Concepts**: Integration of all state management concepts
-- **Workshop**: Complete authentication flow
-- **Project**: Production-ready auth system
-- **Duration**: 120 minutes
+- **Concepts**: Hybrid state management architecture, strategic pattern integration, authentication system design, advanced theme management, clean architecture with multiple patterns, production-ready patterns, comprehensive testing strategies
+- **Workshop**: Complete AuthFlow Pro application with strategic use of all four patterns - Bloc for authentication, Riverpod for theme management, Provider for user settings, setState for local UI state
+- **Project**: Production-ready authentication and theme management system demonstrating hybrid architecture, cross-pattern communication, enterprise security, and comprehensive testing coverage
+- **Duration**: 240 minutes
 
 ### **🟠 Phase 4: Data & Storage (Lessons 16-18)**
 *Connect to APIs and persist data*
