@@ -1,0 +1,196 @@
+{
+  // ================================
+  // OPTIMAL FLUTTER VS CODE SETTINGS
+  // ================================
+  
+  // Flutter & Dart Configuration
+  "dart.flutterSdkPath": null,
+  "dart.checkForSdkUpdates": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.flutterHotReloadOnSave": "always",
+  "dart.flutterCreateAndroidLanguage": "kotlin",
+  "dart.flutterCreateIOSLanguage": "swift",
+  "dart.flutterCreatePlatforms": ["android", "ios", "web"],
+  
+  // Performance Optimizations
+  "dart.maxLogLineLength": 2000,
+  "dart.analysisServerFolding": true,
+  "dart.previewCommitCharacters": true,
+  "dart.triggerSignatureHelpAutomatically": true,
+  "dart.completeFunctionCalls": true,
+  "dart.includeDependenciesInWorkspaceSymbols": true,
+  
+  // Code Quality
+  "dart.lineLength": 80,
+  "dart.insertArgumentPlaceholders": true,
+  "dart.showMainCodeLens": false,
+  "dart.showTestCodeLens": true,
+  "dart.warnWhenEditingFilesOutsideWorkspace": true,
+  "dart.warnWhenEditingFilesInPubCache": true,
+  
+  // Editor Configuration
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.semanticHighlighting.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  
+  // File Management
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.dart": "dart",
+    "*.arb": "json",
+    "pubspec.yaml": "yaml",
+    "analysis_options.yaml": "yaml"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/*.lock": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.dart_tool/**": true,
+    "**/node_modules/**": true
+  },
+  
+  // Search Configuration
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/node_modules": true,
+    "**/*.lock": true,
+    "ios/Pods": true,
+    "**/.symlinks": true
+  },
+  
+  // Theme and Appearance
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.panel.defaultLocation": "bottom",
+  
+  // Terminal Configuration
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "terminal.integrated.shell.windows": "PowerShell",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.copyOnSelection": true,
+  
+  // Git Integration
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.decorations.enabled": true,
+  "git.showPushSuccessNotification": true,
+  
+  // Extension-Specific Settings
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.followCursor": "activeLine",
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    ["Gold", "Orchid", "LightSkyBlue"],
+    "Red"
+  ],
+  
+  // Language-Specific Settings
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  
+  // Flutter Specific
+  "dart.openDevTools": "flutter",
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.evaluateGettersInDebugViews": true,
+  "dart.promptToGetPackages": true,
+  "dart.promptToUpgradeWorkspace": true,
+  "dart.allowAnalytics": false,
+  "dart.reporting.sentry": false,
+  
+  // Performance & Memory
+  "dart.analysisServerMemoryMb": 4096,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "extensions.autoUpdate": false,
+  "telemetry.telemetryLevel": "off",
+  
+  // Code Folding
+  "editor.foldingStrategy": "indentation",
+  "editor.showFoldingControls": "mouseover",
+  "editor.foldingImportsByDefault": false,
+  
+  // IntelliSense
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.parameterHints.enabled": true,
+  "editor.hover.enabled": true,
+  "editor.hover.delay": 300,
+  
+  // Debug Configuration
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.inlineValues": "auto",
+  "debug.showInStatusBar": "always",
+  "debug.console.fontSize": 14,
+  
+  // Emmet Configuration
+  "emmet.includeLanguages": {
+    "dart": "html"
+  },
+  "emmet.triggerExpansionOnTab": false,
+  
+  // Productivity Features
+  "editor.linkedEditing": true,
+  "editor.rename.enablePreview": true,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "workbench.commandPalette.history": 50,
+  "workbench.quickOpen.closeOnFocusLost": false
+}
