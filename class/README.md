@@ -82,8 +82,8 @@ Test, deploy, and maintain professional apps
 | Lesson | Topic | Duration | Project |
 |--------|--------|----------|---------|
 | [22](modules/lesson_22/) | Unit & Widget Testing | 375 min | Comprehensive testing framework with >90% coverage, Firebase testing, and TDD practices |
-| [23](modules/lesson_23/) | Integration Testing + Mocking | 90 min | E2E test suite |
-| [24](modules/lesson_24/) | Error Handling & Logging | 60 min | Production monitoring |
+| [23](modules/lesson_23/) | Integration Testing + Mocking | 330 min | Comprehensive E2E testing with advanced mocking, performance validation, and CI/CD automation |
+| [24](modules/lesson_24/) | Error Handling & Logging | 60 min | Production monitoring with error handling, logging, crash reporting, and performance tracking |
 | [25](modules/lesson_25/) | CI/CD with GitHub Actions | 90 min | Automated deployment |
 | [26](modules/lesson_26/) | Publishing to App Stores | 60 min | Store submission |
 
