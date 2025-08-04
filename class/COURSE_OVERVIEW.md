@@ -217,10 +217,10 @@ Every concept is immediately applied in working applications:
 - **Duration**: 540 minutes
 
 #### **Lesson 20: Cloud Functions + Push Notifications**
-- **Concepts**: Serverless backend, real-time messaging
-- **Workshop**: Notification system
-- **Project**: Real-time communication
-- **Duration**: 75 minutes
+- **Concepts**: Comprehensive serverless backend mastery with Cloud Functions, Firebase Cloud Messaging (FCM) integration for cross-platform push notifications, event-driven architecture with Firestore triggers, background processing for automation and analytics, intelligent notification targeting and personalization, performance optimization for serverless functions, comprehensive testing with Firebase emulators
+- **Workshop**: Enhanced SocialHub Pro with Cloud Functions backend - serverless functions for social interactions (posts, likes, comments, follows), FCM integration with rich notifications and targeting, background processing for content moderation and analytics, automated social notifications with template engine, event-driven architecture responding to database changes, comprehensive testing with emulator suite
+- **Project**: Production-ready social platform with intelligent serverless backend demonstrating Cloud Functions excellence, comprehensive push notification system with FCM, automated background processing for content and analytics, event-driven architecture with real-time responses, performance optimization and monitoring, comprehensive testing strategies for serverless applications
+- **Duration**: 600 minutes
 
 #### **Lesson 21: Project - Chat/Social Feed App**
 - **Concepts**: Real-time features, cloud integration
