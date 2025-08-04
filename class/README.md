@@ -72,7 +72,7 @@ Build real-time, scalable apps
 
 | Lesson | Topic | Duration | Project |
 |--------|--------|----------|---------|
-| [19](modules/lesson_19/) | Firebase Auth + Firestore | 90 min | User authentication |
+| [19](modules/lesson_19/) | Firebase Auth + Firestore | 540 min | SocialHub Pro with multi-provider auth, real-time social features, and security rules |
 | [20](modules/lesson_20/) | Cloud Functions + Push Notifications | 75 min | Real-time messaging |
 | [21](modules/lesson_21/) | **Project**: Chat/Social Feed App | 180 min | Full social features |
 
