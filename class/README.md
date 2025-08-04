@@ -64,8 +64,8 @@ Connect to APIs and persist data
 | Lesson | Topic | Duration | Project |
 |--------|--------|----------|---------|
 | [16](modules/lesson_16/) | Networking with Dio & Retrofit | 270 min | Professional news app with advanced networking, caching, and offline support |
-| [17](modules/lesson_17/) | Local Storage (Hive/SQLite) | 60 min | Offline note app |
-| [18](modules/lesson_18/) | **Project**: News App | 150 min | Full API + cache app |
+| [17](modules/lesson_17/) | Local Storage (Hive/SQLite) | 300 min | NoteMaster Pro with dual storage backends, clean architecture, and offline-first design |
+| [18](modules/lesson_18/) | **Project**: NewsHub Ultimate | 480 min | Complete news app integrating all Phase 4 concepts with advanced features |
 
 ### 🔴 **Phase 5: Firebase & Cloud (Lessons 19-21)**
 Build real-time, scalable apps
@@ -162,7 +162,7 @@ Track your progress with our built-in checklist:
 - [x] **Phase 1 Complete** - Flutter fundamentals mastered
 - [x] **Phase 2 Complete** - UI/UX skills developed  
 - [x] **Phase 3 Complete** - State management expertise
-- [ ] **Phase 4 In Progress** - Data integration skills
+- [x] **Phase 4 Complete** - Data integration mastery
 - [ ] **Phase 5 Complete** - Cloud development ready
 - [ ] **Phase 6 Complete** - Production deployment capable
 - [ ] **Capstone Complete** - Expert-level project finished

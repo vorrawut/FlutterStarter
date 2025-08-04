@@ -196,16 +196,16 @@ Every concept is immediately applied in working applications:
 - **Duration**: 270 minutes
 
 #### **Lesson 17: Local Storage (Hive/SQLite)**
-- **Concepts**: Data persistence, caching strategies, offline support
-- **Workshop**: Offline note-taking app
-- **Project**: Complete local data management
-- **Duration**: 60 minutes
+- **Concepts**: Comprehensive local storage patterns with dual backend implementation, Hive (NoSQL) vs SQLite (SQL) comparison and decision framework, clean architecture integration with repository pattern, offline-first design principles, data synchronization and conflict resolution, performance optimization and memory management, comprehensive testing strategies
+- **Workshop**: Complete NoteMaster Pro application with dual storage backends - advanced Hive implementation with type adapters and lazy loading, comprehensive SQLite setup with complex queries and FTS, repository pattern with storage abstraction, advanced search and analytics, offline-first architecture with sync management
+- **Project**: Production-ready note-taking application demonstrating both Hive and SQLite storage patterns, clean architecture with repository pattern, advanced features including categories, tags, full-text search, analytics, offline synchronization, and comprehensive testing coverage
+- **Duration**: 300 minutes
 
-#### **Lesson 18: Project - News App**
-- **Concepts**: API + cache integration, refresh patterns
-- **Workshop**: Complete news reader
-- **Project**: Production news application
-- **Duration**: 150 minutes
+#### **Lesson 18: Project - NewsHub Ultimate**
+- **Concepts**: Complete data layer integration combining networking and storage, production-ready architecture with clean separation of concerns, advanced synchronization strategies with intelligent conflict resolution, performance optimization with multi-level caching, real-world features including search, bookmarks, and analytics, comprehensive testing across all integration layers
+- **Workshop**: Complete NewsHub Ultimate application integrating all Phase 4 concepts - seamless combination of Dio networking with Hive/SQLite storage, intelligent sync service with offline queue management, advanced search with hybrid local/remote results, comprehensive bookmark management with organization features, production-ready error handling and performance monitoring
+- **Project**: Production-ready news application demonstrating complete mastery of data integration patterns, advanced features including offline reading, intelligent search, smart bookmarks, user analytics, comprehensive testing coverage, and deployment-ready architecture
+- **Duration**: 480 minutes
 
 ### **🔴 Phase 5: Firebase & Cloud (Lessons 19-21)**
 *Build real-time, scalable applications*
