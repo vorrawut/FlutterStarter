@@ -250,9 +250,9 @@ Every concept is immediately applied in working applications:
 - **Duration**: 60 minutes
 
 #### **Lesson 25: CI/CD with GitHub Actions**
-- **Concepts**: Automated deployment, build pipelines
-- **Workshop**: Complete CI/CD setup
-- **Project**: Automated deployment pipeline
+- **Concepts**: Comprehensive CI/CD pipeline architecture with enterprise-grade automation, GitHub Actions workflow excellence with parallel jobs and matrix builds, automated testing integration with quality gates and performance validation, multi-platform build automation with iOS, Android, and web deployment, deployment automation excellence with staged releases and approval workflows, security and compliance integration with vulnerability scanning and quality gates, performance monitoring in CI/CD with automated benchmarking and regression detection, intelligent notification systems with multi-channel communication and incident management
+- **Workshop**: Complete CI/CD automation implementation including enterprise pipeline setup with parallel job execution and intelligent dependencies, comprehensive testing automation with quality gate validation and coverage analysis, multi-platform build pipeline with Android APK/AAB, iOS IPA, and web deployment, security integration with SAST analysis and dependency scanning, deployment orchestration with staging, production, and app store automation, performance monitoring integration with Firebase Performance and custom metrics, notification system setup with Slack, Teams, and email integration for team collaboration
+- **Project**: Production-ready CI/CD automation demonstrating enterprise pipeline excellence with comprehensive workflow orchestration, advanced testing automation with quality gates and performance validation, multi-platform deployment with automated signing and store submission, security integration with vulnerability management and compliance automation, sophisticated deployment strategy with blue-green deployments and rollback capabilities, performance monitoring with real-time metrics and optimization insights, intelligent communication with context-aware notifications and incident response
 - **Duration**: 90 minutes
 
 #### **Lesson 26: Publishing to App Stores**
