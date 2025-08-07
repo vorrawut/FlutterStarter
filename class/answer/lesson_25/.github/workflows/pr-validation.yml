@@ -1,0 +1,235 @@
+name: 🔍 Pull Request Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main, develop]
+
+env:
+  FLUTTER_VERSION: '3.27.0'
+
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr-checks:
+    name: 🔍 PR Quality Checks
+    runs-on: ubuntu-latest
+    if: '!github.event.pull_request.draft'
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+          
+      - name: 📦 Get Dependencies
+        run: flutter pub get
+        
+      - name: 🔍 Quick Analysis
+        id: analysis
+        run: |
+          echo "Running quick analysis for PR..."
+          flutter analyze --fatal-warnings > analysis.txt 2>&1 || true
+          
+          ISSUES=$(cat analysis.txt | grep -E "(error|warning)" | wc -l)
+          echo "issues=$ISSUES" >> $GITHUB_OUTPUT
+          
+          if [[ $ISSUES -gt 0 ]]; then
+            echo "::warning::Found $ISSUES analysis issues"
+            echo "Analysis results:"
+            cat analysis.txt
+          else
+            echo "✅ No analysis issues found"
+          fi
+          
+      - name: 🧪 Quick Tests
+        id: tests
+        run: |
+          echo "Running unit tests..."
+          flutter test --reporter=compact
+          echo "status=passed" >> $GITHUB_OUTPUT
+          
+      - name: 📝 Code Formatting
+        id: formatting
+        run: |
+          echo "Checking code formatting..."
+          dart format --set-exit-if-changed lib/ test/
+          echo "status=valid" >> $GITHUB_OUTPUT
+          
+      - name: 📊 Code Quality Assessment
+        run: |
+          # Calculate lines of code
+          TOTAL_LINES=$(find lib/ -name "*.dart" -exec cat {} \; | wc -l)
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD | grep "\.dart$" | wc -l)
+          
+          echo "Lines of code: $TOTAL_LINES"
+          echo "Changed Dart files: $CHANGED_FILES"
+          
+      - name: 📋 PR Summary
+        run: |
+          echo "### 🔍 PR Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status | Details |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|---------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Static Analysis | ${{ steps.analysis.outputs.issues == '0' && '✅ Passed' || '⚠️ Issues Found' }} | ${{ steps.analysis.outputs.issues }} issues |" >> $GITHUB_STEP_SUMMARY
+          echo "| Unit Tests | ✅ Passed | All tests passing |" >> $GITHUB_STEP_SUMMARY
+          echo "| Code Formatting | ✅ Valid | Code properly formatted |" >> $GITHUB_STEP_SUMMARY
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### 📊 PR Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changed Files**: $(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dart Files Changed**: $(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD | grep "\.dart$" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Lines Added**: +$(git diff --numstat origin/${{ github.event.pull_request.base.ref }}...HEAD | awk '{added+=$1} END {print added}')" >> $GITHUB_STEP_SUMMARY
+          echo "- **Lines Removed**: -$(git diff --numstat origin/${{ github.event.pull_request.base.ref }}...HEAD | awk '{removed+=$2} END {print removed}')" >> $GITHUB_STEP_SUMMARY
+
+  pr-size-check:
+    name: 📏 PR Size Analysis
+    runs-on: ubuntu-latest
+    if: '!github.event.pull_request.draft'
+    
+    steps:
+      - name: 📥 Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 📏 Analyze PR Size
+        id: size-check
+        run: |
+          # Get changed files
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD | wc -l)
+          TOTAL_ADDITIONS=$(git diff --numstat origin/${{ github.event.pull_request.base.ref }}...HEAD | awk '{sum+=$1} END {print sum}')
+          TOTAL_DELETIONS=$(git diff --numstat origin/${{ github.event.pull_request.base.ref }}...HEAD | awk '{sum+=$2} END {print sum}')
+          NET_CHANGES=$((TOTAL_ADDITIONS + TOTAL_DELETIONS))
+          
+          echo "Changed files: $CHANGED_FILES"
+          echo "Total additions: $TOTAL_ADDITIONS"
+          echo "Total deletions: $TOTAL_DELETIONS"
+          echo "Net changes: $NET_CHANGES"
+          
+          # Determine PR size category
+          if [[ $NET_CHANGES -lt 50 ]]; then
+            SIZE_CATEGORY="XS"
+            SIZE_COLOR="🟢"
+          elif [[ $NET_CHANGES -lt 200 ]]; then
+            SIZE_CATEGORY="S"
+            SIZE_COLOR="🟢"
+          elif [[ $NET_CHANGES -lt 500 ]]; then
+            SIZE_CATEGORY="M"
+            SIZE_COLOR="🟡"
+          elif [[ $NET_CHANGES -lt 1000 ]]; then
+            SIZE_CATEGORY="L"
+            SIZE_COLOR="🟠"
+          else
+            SIZE_CATEGORY="XL"
+            SIZE_COLOR="🔴"
+          fi
+          
+          echo "size-category=$SIZE_CATEGORY" >> $GITHUB_OUTPUT
+          echo "size-color=$SIZE_COLOR" >> $GITHUB_OUTPUT
+          echo "net-changes=$NET_CHANGES" >> $GITHUB_OUTPUT
+          
+          # Add warning for large PRs
+          if [[ $NET_CHANGES -gt 500 ]]; then
+            echo "::warning::Large PR detected ($NET_CHANGES changes). Consider breaking it into smaller PRs for easier review."
+          fi
+          
+      - name: 📝 Add PR Size Label
+        run: |
+          echo "### ${{ steps.size-check.outputs.size-color }} PR Size: ${{ steps.size-check.outputs.size-category }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Change Summary:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Net changes: ${{ steps.size-check.outputs.net-changes }} lines" >> $GITHUB_STEP_SUMMARY
+          echo "- Review complexity: ${{ steps.size-check.outputs.size-category }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [[ "${{ steps.size-check.outputs.size-category }}" == "XL" ]]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ **Large PR Warning**: This PR has significant changes. Consider:" >> $GITHUB_STEP_SUMMARY
+            echo "- Breaking into smaller, focused PRs" >> $GITHUB_STEP_SUMMARY
+            echo "- Adding detailed description and testing notes" >> $GITHUB_STEP_SUMMARY
+            echo "- Requesting reviews from multiple team members" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  pr-security-check:
+    name: 🛡️ PR Security Check
+    runs-on: ubuntu-latest
+    if: '!github.event.pull_request.draft'
+    
+    steps:
+      - name: 📥 Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 🔍 Check for Sensitive Changes
+        run: |
+          echo "Checking for sensitive file changes..."
+          
+          # Check for changes to sensitive files
+          SENSITIVE_PATTERNS=(
+            "\.env"
+            "\.key"
+            "\.pem"
+            "\.p12"
+            "\.jks"
+            "key\.properties"
+            "google-services\.json"
+            "GoogleService-Info\.plist"
+            "firebase_options\.dart"
+          )
+          
+          SENSITIVE_CHANGES=0
+          for pattern in "${SENSITIVE_PATTERNS[@]}"; do
+            if git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD | grep -E "$pattern"; then
+              echo "::warning::Sensitive file detected: $pattern"
+              SENSITIVE_CHANGES=$((SENSITIVE_CHANGES + 1))
+            fi
+          done
+          
+          if [[ $SENSITIVE_CHANGES -gt 0 ]]; then
+            echo "::warning::$SENSITIVE_CHANGES sensitive file(s) modified. Ensure no secrets are committed."
+          else
+            echo "✅ No sensitive files modified"
+          fi
+          
+      - name: 🔐 Scan for Potential Secrets
+        run: |
+          echo "Scanning for potential secrets in changed files..."
+          
+          # Get changed files
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD)
+          
+          # Secret patterns to check
+          SECRET_PATTERNS=(
+            "password\s*[:=]\s*[\"'][^\"']{8,}[\"']"
+            "api_?key\s*[:=]\s*[\"'][^\"']{20,}[\"']"
+            "secret\s*[:=]\s*[\"'][^\"']{16,}[\"']"
+            "token\s*[:=]\s*[\"'][^\"']{20,}[\"']"
+            "private_?key\s*[:=]"
+          )
+          
+          POTENTIAL_SECRETS=0
+          for file in $CHANGED_FILES; do
+            if [[ -f "$file" && "$file" =~ \.(dart|yaml|json|gradle)$ ]]; then
+              for pattern in "${SECRET_PATTERNS[@]}"; do
+                if grep -E "$pattern" "$file" > /dev/null 2>&1; then
+                  echo "::warning::Potential secret in $file"
+                  POTENTIAL_SECRETS=$((POTENTIAL_SECRETS + 1))
+                fi
+              done
+            fi
+          done
+          
+          if [[ $POTENTIAL_SECRETS -eq 0 ]]; then
+            echo "✅ No potential secrets detected"
+          else
+            echo "::warning::$POTENTIAL_SECRETS potential secret(s) detected. Please review."
+          fi

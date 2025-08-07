@@ -1,0 +1,378 @@
+name: 🛡️ Security Scanning
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    - cron: '0 2 * * 1' # Weekly security scan
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: '3.27.0'
+
+jobs:
+  security-scan:
+    name: 🛡️ Security Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+          
+      - name: 📦 Get Dependencies
+        run: flutter pub get
+        
+      - name: 🔍 Secret Scanning
+        id: secret-scan
+        run: |
+          echo "Scanning for secrets and sensitive data..."
+          
+          # Advanced secret patterns
+          SECRET_PATTERNS=(
+            # API Keys and Tokens
+            "(?i)(api[_-]?key|apikey)\s*[:=]\s*[\"'][a-zA-Z0-9_-]{20,}[\"']"
+            "(?i)(secret[_-]?key|secretkey)\s*[:=]\s*[\"'][a-zA-Z0-9_-]{16,}[\"']"
+            "(?i)(access[_-]?token|accesstoken)\s*[:=]\s*[\"'][a-zA-Z0-9_-]{20,}[\"']"
+            "(?i)(auth[_-]?token|authtoken)\s*[:=]\s*[\"'][a-zA-Z0-9_-]{20,}[\"']"
+            
+            # Database URLs and Connection Strings
+            "(?i)(database[_-]?url|db[_-]?url)\s*[:=]\s*[\"'][^\"']{20,}[\"']"
+            "(?i)(connection[_-]?string|connectionstring)\s*[:=]\s*[\"'][^\"']{20,}[\"']"
+            
+            # Firebase and Google API Keys
+            "AIza[0-9A-Za-z\\-_]{35}"
+            "ya29\\.[0-9A-Za-z\\-_]+"
+            "AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}"
+            
+            # AWS Keys
+            "AKIA[0-9A-Z]{16}"
+            "[0-9a-zA-Z/+]{40}"
+            
+            # Private Keys
+            "-----BEGIN [A-Z]+ PRIVATE KEY-----"
+            "-----BEGIN OPENSSH PRIVATE KEY-----"
+            
+            # Passwords
+            "(?i)password\s*[:=]\s*[\"'][^\"']{8,}[\"']"
+          )
+          
+          SECRETS_FOUND=0
+          mkdir -p security-reports
+          
+          for pattern in "${SECRET_PATTERNS[@]}"; do
+            matches=$(grep -r -E "$pattern" lib/ test/ android/ ios/ web/ || true)
+            if [[ -n "$matches" ]]; then
+              echo "::warning::Potential secret pattern found"
+              echo "$matches" >> security-reports/potential-secrets.txt
+              SECRETS_FOUND=$((SECRETS_FOUND + 1))
+            fi
+          done
+          
+          echo "secrets-found=$SECRETS_FOUND" >> $GITHUB_OUTPUT
+          
+          if [[ $SECRETS_FOUND -eq 0 ]]; then
+            echo "✅ No secrets detected"
+          else
+            echo "::warning::$SECRETS_FOUND potential secret patterns found"
+          fi
+          
+      - name: 🛡️ SAST Analysis
+        id: sast-scan
+        run: |
+          echo "Running Static Application Security Testing..."
+          
+          # Custom SAST checks for Flutter/Dart
+          SAST_ISSUES=0
+          
+          # Check for SQL injection vulnerabilities
+          SQL_INJECTION=$(grep -r "SELECT.*\$\|INSERT.*\$\|UPDATE.*\$\|DELETE.*\$" lib/ || true)
+          if [[ -n "$SQL_INJECTION" ]]; then
+            echo "::warning::Potential SQL injection vulnerability detected"
+            SAST_ISSUES=$((SAST_ISSUES + 1))
+          fi
+          
+          # Check for insecure HTTP usage
+          HTTP_USAGE=$(grep -r "http://" lib/ test/ || true)
+          if [[ -n "$HTTP_USAGE" ]]; then
+            echo "::warning::Insecure HTTP usage detected (should use HTTPS)"
+            SAST_ISSUES=$((SAST_ISSUES + 1))
+          fi
+          
+          # Check for debug mode in production code
+          DEBUG_CODE=$(grep -r "kDebugMode.*false\|debugPrint\|print(" lib/ || true)
+          if [[ -n "$DEBUG_CODE" ]]; then
+            echo "::info::Debug code detected (review for production readiness)"
+            # Not counted as security issue, but flagged for review
+          fi
+          
+          # Check for unsafe SSL configurations
+          SSL_ISSUES=$(grep -r "allowBadCertificates.*true\|checkServerTrusted.*{}" lib/ || true)
+          if [[ -n "$SSL_ISSUES" ]]; then
+            echo "::error::Unsafe SSL configuration detected"
+            SAST_ISSUES=$((SAST_ISSUES + 1))
+          fi
+          
+          # Check for hardcoded IPs
+          HARDCODED_IPS=$(grep -r "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" lib/ || true)
+          if [[ -n "$HARDCODED_IPS" ]]; then
+            echo "::warning::Hardcoded IP addresses detected"
+            SAST_ISSUES=$((SAST_ISSUES + 1))
+          fi
+          
+          echo "sast-issues=$SAST_ISSUES" >> $GITHUB_OUTPUT
+          
+          if [[ $SAST_ISSUES -eq 0 ]]; then
+            echo "✅ No SAST issues found"
+          else
+            echo "::warning::$SAST_ISSUES SAST issues detected"
+          fi
+          
+      - name: 📦 Dependency Vulnerability Scan
+        id: dependency-scan
+        run: |
+          echo "Scanning dependencies for known vulnerabilities..."
+          
+          # Get all dependencies
+          flutter pub deps --json > dependencies.json
+          
+          # Extract direct dependencies
+          DIRECT_DEPS=$(cat dependencies.json | jq -r '.packages[] | select(.kind == "direct") | .name' | wc -l)
+          TOTAL_DEPS=$(cat dependencies.json | jq -r '.packages[] | .name' | wc -l)
+          
+          echo "Direct dependencies: $DIRECT_DEPS"
+          echo "Total dependencies: $TOTAL_DEPS"
+          
+          # Check for known vulnerable packages (simplified check)
+          VULNERABLE_PACKAGES=(
+            # Example vulnerable packages (this would be updated with real data)
+            "http:0.12.0"
+            "path_provider:1.6.0"
+          )
+          
+          VULNERABILITIES=0
+          for vulnerable in "${VULNERABLE_PACKAGES[@]}"; do
+            if cat dependencies.json | jq -r '.packages[] | "\(.name):\(.version)"' | grep -q "$vulnerable"; then
+              echo "::error::Vulnerable dependency detected: $vulnerable"
+              VULNERABILITIES=$((VULNERABILITIES + 1))
+            fi
+          done
+          
+          # Check for outdated packages
+          flutter pub outdated --json > outdated.json || true
+          OUTDATED_PACKAGES=$(cat outdated.json | jq -r '.packages[]? | .package' | wc -l || echo "0")
+          
+          echo "vulnerabilities=$VULNERABILITIES" >> $GITHUB_OUTPUT
+          echo "outdated-packages=$OUTDATED_PACKAGES" >> $GITHUB_OUTPUT
+          
+          if [[ $VULNERABILITIES -eq 0 ]]; then
+            echo "✅ No known vulnerabilities in dependencies"
+          else
+            echo "::error::$VULNERABILITIES vulnerable dependencies found"
+          fi
+          
+          if [[ $OUTDATED_PACKAGES -gt 0 ]]; then
+            echo "::info::$OUTDATED_PACKAGES packages have updates available"
+          fi
+          
+      - name: 🔐 License Compliance Check
+        id: license-check
+        run: |
+          echo "Checking license compliance..."
+          
+          # Allowed licenses
+          ALLOWED_LICENSES=(
+            "MIT"
+            "Apache-2.0"
+            "BSD-2-Clause"
+            "BSD-3-Clause"
+            "ISC"
+          )
+          
+          # Restricted licenses
+          RESTRICTED_LICENSES=(
+            "GPL"
+            "LGPL"
+            "AGPL"
+            "SSPL"
+          )
+          
+          LICENSE_ISSUES=0
+          
+          # Extract license information from pubspec files
+          # This is a simplified check - in practice, you'd use a proper tool
+          for license in "${RESTRICTED_LICENSES[@]}"; do
+            if find . -name "pubspec.yaml" -exec grep -l "$license" {} \; | head -5; then
+              echo "::warning::Restricted license detected: $license"
+              LICENSE_ISSUES=$((LICENSE_ISSUES + 1))
+            fi
+          done
+          
+          echo "license-issues=$LICENSE_ISSUES" >> $GITHUB_OUTPUT
+          
+          if [[ $LICENSE_ISSUES -eq 0 ]]; then
+            echo "✅ No license compliance issues detected"
+          else
+            echo "::warning::$LICENSE_ISSUES potential license issues found"
+          fi
+          
+      - name: 📱 Mobile Security Assessment
+        id: mobile-security
+        run: |
+          echo "Running mobile-specific security checks..."
+          
+          MOBILE_ISSUES=0
+          
+          # Android security checks
+          if [[ -d android/ ]]; then
+            echo "Checking Android security configuration..."
+            
+            # Check for debug keystore usage
+            if grep -r "debug.keystore" android/; then
+              echo "::error::Debug keystore found in production configuration"
+              MOBILE_ISSUES=$((MOBILE_ISSUES + 1))
+            fi
+            
+            # Check for insecure network configuration
+            if grep -r "usesCleartextTraffic.*true" android/; then
+              echo "::warning::Cleartext traffic allowed in Android manifest"
+              MOBILE_ISSUES=$((MOBILE_ISSUES + 1))
+            fi
+            
+            # Check for backup allowance
+            if grep -r "allowBackup.*true" android/; then
+              echo "::info::App backup is allowed (review for sensitive data)"
+            fi
+          fi
+          
+          # iOS security checks
+          if [[ -d ios/ ]]; then
+            echo "Checking iOS security configuration..."
+            
+            # Check for ATS exceptions
+            if grep -r "NSAllowsArbitraryLoads.*true" ios/; then
+              echo "::warning::App Transport Security disabled"
+              MOBILE_ISSUES=$((MOBILE_ISSUES + 1))
+            fi
+            
+            # Check for development team in production
+            if grep -r "DevelopmentTeam.*[A-Z0-9]" ios/ && [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+              echo "::info::Development team configured (ensure correct for production)"
+            fi
+          fi
+          
+          echo "mobile-issues=$MOBILE_ISSUES" >> $GITHUB_OUTPUT
+          
+          if [[ $MOBILE_ISSUES -eq 0 ]]; then
+            echo "✅ No mobile security issues detected"
+          else
+            echo "::warning::$MOBILE_ISSUES mobile security issues found"
+          fi
+          
+      - name: 📋 Generate Security Report
+        run: |
+          mkdir -p security-reports
+          
+          # Create comprehensive security report
+          cat > security-reports/security-summary.json << EOF
+          {
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "commit_sha": "${{ github.sha }}",
+            "branch": "${{ github.ref_name }}",
+            "scan_results": {
+              "secrets": {
+                "found": ${{ steps.secret-scan.outputs.secrets-found }},
+                "status": "${{ steps.secret-scan.outputs.secrets-found == '0' && 'PASS' || 'FAIL' }}"
+              },
+              "sast": {
+                "issues": ${{ steps.sast-scan.outputs.sast-issues }},
+                "status": "${{ steps.sast-scan.outputs.sast-issues == '0' && 'PASS' || 'WARN' }}"
+              },
+              "dependencies": {
+                "vulnerabilities": ${{ steps.dependency-scan.outputs.vulnerabilities }},
+                "outdated": ${{ steps.dependency-scan.outputs.outdated-packages }},
+                "status": "${{ steps.dependency-scan.outputs.vulnerabilities == '0' && 'PASS' || 'FAIL' }}"
+              },
+              "licenses": {
+                "issues": ${{ steps.license-check.outputs.license-issues }},
+                "status": "${{ steps.license-check.outputs.license-issues == '0' && 'PASS' || 'WARN' }}"
+              },
+              "mobile": {
+                "issues": ${{ steps.mobile-security.outputs.mobile-issues }},
+                "status": "${{ steps.mobile-security.outputs.mobile-issues == '0' && 'PASS' || 'WARN' }}"
+              }
+            }
+          }
+          EOF
+          
+      - name: 📤 Upload Security Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports-${{ github.run_number }}
+          path: security-reports/
+          retention-days: 90
+          
+      - name: 📊 Security Summary
+        run: |
+          echo "### 🛡️ Security Scan Results" >> $GITHUB_STEP_SUMMARY
+          echo "| Category | Status | Issues |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Secret Detection | ${{ steps.secret-scan.outputs.secrets-found == '0' && '✅ PASS' || '❌ FAIL' }} | ${{ steps.secret-scan.outputs.secrets-found }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| SAST Analysis | ${{ steps.sast-scan.outputs.sast-issues == '0' && '✅ PASS' || '⚠️ WARN' }} | ${{ steps.sast-scan.outputs.sast-issues }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Dependency Scan | ${{ steps.dependency-scan.outputs.vulnerabilities == '0' && '✅ PASS' || '❌ FAIL' }} | ${{ steps.dependency-scan.outputs.vulnerabilities }} vulnerabilities |" >> $GITHUB_STEP_SUMMARY
+          echo "| License Check | ${{ steps.license-check.outputs.license-issues == '0' && '✅ PASS' || '⚠️ WARN' }} | ${{ steps.license-check.outputs.license-issues }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Mobile Security | ${{ steps.mobile-security.outputs.mobile-issues == '0' && '✅ PASS' || '⚠️ WARN' }} | ${{ steps.mobile-security.outputs.mobile-issues }} |" >> $GITHUB_STEP_SUMMARY
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### 📊 Additional Information" >> $GITHUB_STEP_SUMMARY
+          echo "- **Dependencies**: ${{ steps.dependency-scan.outputs.outdated-packages }} packages have updates available" >> $GITHUB_STEP_SUMMARY
+          echo "- **Scan Date**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Report**: Available in artifacts for 90 days" >> $GITHUB_STEP_SUMMARY
+
+  # Overall security gate
+  security-gate:
+    name: 🚦 Security Gate
+    runs-on: ubuntu-latest
+    needs: security-scan
+    if: always()
+    
+    steps:
+      - name: 📥 Download Security Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: security-reports-${{ github.run_number }}
+          
+      - name: 🚦 Evaluate Security Gate
+        run: |
+          # Read security summary
+          SECRETS_FOUND=$(cat security-summary.json | jq -r '.scan_results.secrets.found')
+          VULNERABILITIES=$(cat security-summary.json | jq -r '.scan_results.dependencies.vulnerabilities')
+          
+          echo "Security Gate Evaluation:"
+          echo "- Secrets found: $SECRETS_FOUND"
+          echo "- Vulnerabilities: $VULNERABILITIES"
+          
+          # Determine if security gate passes
+          if [[ $SECRETS_FOUND -eq 0 && $VULNERABILITIES -eq 0 ]]; then
+            echo "✅ Security gate PASSED"
+            exit 0
+          else
+            echo "❌ Security gate FAILED"
+            echo "::error::Security issues detected that must be addressed"
+            
+            if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+              echo "::error::This PR cannot be merged until security issues are resolved"
+            fi
+            
+            exit 1
+          fi
