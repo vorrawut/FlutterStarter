@@ -1,0 +1,43 @@
+name: development_environment_master
+description: A comprehensive Flutter application demonstrating development environment mastery and professional setup optimization.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Development productivity packages
+  cupertino_icons: ^1.0.2
+  
+  # Environment information
+  device_info_plus: ^9.1.0
+  package_info_plus: ^4.1.0
+  
+  # Development tools integration
+  path_provider: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  # Add assets for development environment demo
+  assets:
+    - assets/images/
+    - assets/icons/
+  
+  # Custom fonts for development setup demonstration
+  fonts:
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/RobotoMono-Regular.ttf
+        - asset: assets/fonts/RobotoMono-Bold.ttf
+          weight: 700
+
