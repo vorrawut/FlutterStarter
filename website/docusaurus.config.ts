@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-github-username/flutter_starter/tree/main/flutter_starter/',
+            'https://github.com/vorrawut/FlutterStarter/tree/main/flutter_starter/',
         },
         blog: {
           showReadingTime: true,
@@ -56,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-github-username/flutter_starter/tree/main/flutter_starter/',
+            'https://github.com/vorrawut/FlutterStarter/tree/main/flutter_starter/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -92,7 +92,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/your-github-username/flutter_starter',
+          href: 'https://github.com/vorrawut/FlutterStarter',
           label: 'GitHub',
           position: 'right',
         },
@@ -140,7 +140,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/your-github-username/flutter_starter',
+              href: 'https://github.com/vorrawut/FlutterStarter',
             },
           ],
         },
