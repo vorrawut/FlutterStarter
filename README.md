@@ -2,6 +2,8 @@
 
 **Complete Flutter learning curriculum with professional documentation website**
 
+Gitbook: https://vorrawut.github.io/FlutterStarter
+
 This repository contains a comprehensive Flutter course and its dedicated documentation website built with Docusaurus v3.
 
 ## 📁 Project Structure
@@ -187,21 +189,3 @@ After completing this course, students will be able to:
 ## 📄 License
 
 This project is designed for educational purposes. Please respect the learning materials and give credit when sharing or adapting content.
-
----
-
-## 🌟 Ready to Start Learning?
-
-**Live Site**: `https://YOUR-USERNAME.github.io/FlutterStarter/`
-
-**Local Development**:
-```bash
-cd website
-npm install
-npm start
-```
-
-**Time Investment**: ~40 hours total  
-**Outcome**: Production-ready Flutter developer
-
-Let's build amazing Flutter apps together! 🚀

@@ -172,6 +172,9 @@ table {
 /* Sidebar menu improvements */
 .theme-doc-sidebar-menu {
   padding: 1rem;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
@@ -255,10 +258,41 @@ table {
   background: var(--ifm-color-primary);
   color: white;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .menu__list .menu__list .menu__list .menu__list-item .menu__link--active:before {
   color: white;
+}
+
+/* Ensure active item is always visible */
+.menu__link--active {
+  scroll-margin: 100px;
+}
+
+/* Auto-expand parent categories when child is active */
+.menu__list-item:has(.menu__link--active) {
+  /* This ensures parent categories stay expanded */
+}
+
+/* Enhanced Phase 6 specific styling for better visibility */
+.menu__list .menu__list-item:nth-last-child(-n+2) {
+  /* Last two phase items (including Phase 6) get special attention */
+  margin-bottom: 1rem;
+}
+
+/* Ensure lessons 25-26 are always visible when in Phase 6 */
+.menu__list .menu__list-item .menu__link[href*="lesson-25"],
+.menu__list .menu__list-item .menu__link[href*="lesson-26"] {
+  font-weight: 600;
+  background: var(--ifm-color-emphasis-75);
+  border-left: 2px solid var(--ifm-color-success);
+}
+
+.menu__list .menu__list-item .menu__link[href*="lesson-25"]:hover,
+.menu__list .menu__list-item .menu__link[href*="lesson-26"]:hover {
+  background: var(--ifm-color-emphasis-150);
+  border-left-color: var(--ifm-color-success-dark);
 }
 
 /* Collapsible arrows */
@@ -293,6 +327,14 @@ table {
   .theme-doc-sidebar-menu {
     max-height: 70vh;
     overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  
+  /* Ensure lessons are visible on mobile */
+  .menu__list .menu__list-item .menu__link[href*="lesson-25"],
+  .menu__list .menu__list-item .menu__link[href*="lesson-26"] {
+    background: var(--ifm-color-emphasis-100);
+    font-weight: 500;
   }
 }
 

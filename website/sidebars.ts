@@ -293,7 +293,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🟣 Phase 6: Production Ready',
-      collapsed: true,
+      collapsed: false,
       items: [
         {
           type: 'category',
