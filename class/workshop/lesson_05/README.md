@@ -28,7 +28,7 @@ code . # For VS Code
 
 ### Step 2: Complete the Workshop Tasks
 
-Open the workshop guide: [workshop_05.md](../../modules/lesson_05/workshop_05.md)
+Open the workshop guide: [workshop_05.md](/curriculum/modules/lesson_05/workshop_05)
 
 Follow the comprehensive step-by-step instructions to build your **Professional Profile Card App**:
 
@@ -86,7 +86,7 @@ Try these progressive exercises to deepen your layout mastery:
 
 ### Step 4: Compare with Solution
 
-Once you've completed the workshop, explore the enhanced solution in [answer/lesson_05/](../../answer/lesson_05/) to see:
+Once you've completed the workshop, you'll have mastered:
 - Professional layout implementation patterns
 - Advanced responsive design techniques
 - Performance optimization strategies
@@ -422,7 +422,7 @@ Stack(
 
 ## ➡️ What's Next?
 
-Ready for [Lesson 06: Navigation & Routing](../../modules/lesson_06/) where you'll build multi-screen applications with sophisticated navigation systems!
+Ready for [Lesson 06: Navigation & Routing](/curriculum/modules/lesson_06/concept) where you'll build multi-screen applications with sophisticated navigation systems!
 
 ### **Skills Progression**
 ```
@@ -437,9 +437,9 @@ Lesson 8: Responsive Design
 
 ## 🆘 Need Help?
 
-- **Concept Questions**: Review the [concept documentation](../../modules/lesson_05/concept.md)
-- **Visual Learning**: Check out the [layout diagrams](../../modules/lesson_05/diagram.md)
-- **Code Issues**: Compare with the [complete solution](../../answer/lesson_05/)
+- **Concept Questions**: Review the [concept documentation](/curriculum/modules/lesson_05/concept)
+- **Visual Learning**: Check out the [layout diagrams](/curriculum/modules/lesson_05/diagram)
+- **Code Issues**: Review your layout implementations and ensure they follow responsive design principles
 - **Layout Debugging**: Use Flutter Inspector and debug painting
 - **General Support**: Ask questions in Flutter community forums
 

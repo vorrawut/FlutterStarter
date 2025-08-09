@@ -391,7 +391,7 @@ You've successfully completed the setup when you can:
 
 ## 🆘 Need Help?
 
-- **Installation Issues**: Refer to [workshop_02.md](../../modules/lesson_02/workshop_02.md) for detailed troubleshooting
+- **Installation Issues**: Refer to [workshop_02.md](/curriculum/modules/lesson_02/workshop_02) for detailed troubleshooting
 - **Platform-Specific Problems**: Check the official Flutter documentation for your OS
 - **IDE Configuration**: Review the IDE-specific setup guides
 - **Performance Issues**: Run the environment check script to identify bottlenecks

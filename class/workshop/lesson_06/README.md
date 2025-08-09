@@ -104,9 +104,9 @@ lib/
 ## 📚 **Resources & Documentation**
 
 ### **📖 Core Concepts Reference**
-- [Concept Guide](../modules/lesson_06/concept.md) - Comprehensive navigation theory
-- [Visual Diagrams](../modules/lesson_06/diagram.md) - Architecture and flow diagrams
-- [Workshop Guide](../modules/lesson_06/workshop_06.md) - Detailed implementation steps
+- [Concept Guide](/curriculum/modules/lesson_06/concept) - Comprehensive navigation theory
+- [Visual Diagrams](/curriculum/modules/lesson_06/diagram) - Architecture and flow diagrams
+- [Workshop Guide](/curriculum/modules/lesson_06/workshop_06) - Detailed implementation steps
 
 ### **🔗 External Resources**
 - [GoRouter Documentation](https://pub.dev/packages/go_router)
@@ -210,7 +210,7 @@ If you encounter issues during the workshop:
 
 ## 🚀 **Ready to Begin?**
 
-Start with the detailed [Workshop Guide](../modules/lesson_06/workshop_06.md) and build an amazing navigation system!
+Start with the detailed [Workshop Guide](/curriculum/modules/lesson_06/workshop_06) and build an amazing navigation system!
 
 **Remember**: The goal is not just to complete the workshop, but to understand the architectural principles that make navigation maintainable and scalable in professional Flutter applications.
 

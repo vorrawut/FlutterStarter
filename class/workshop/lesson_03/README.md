@@ -43,7 +43,7 @@ lib/
 
 ### Step 3: Complete the Workshop Tasks
 
-Follow the comprehensive workshop guide: [workshop_03.md](../../modules/lesson_03/workshop_03.md)
+Follow the comprehensive workshop guide: [workshop_03.md](/curriculum/modules/lesson_03/workshop_03)
 
 Build your Dart playground app step by step:
 
@@ -101,7 +101,7 @@ Build your Dart playground app step by step:
 
 ### Step 5: Compare with Solution
 
-After completing the workshop, explore the complete implementation in [answer/lesson_03/](../../answer/lesson_03/) to see:
+After completing the workshop, you'll have implemented:
 - Professional Dart code patterns
 - Advanced language features
 - Performance optimizations
@@ -325,7 +325,7 @@ Future<String> fetchData() async {
 
 ## ➡️ What's Next?
 
-Ready for [Lesson 04: Widgets 101](../../modules/lesson_04/) where you'll apply your Dart knowledge to build Flutter UIs!
+Ready for [Lesson 04: Widgets 101](/curriculum/modules/lesson_04/concept) where you'll apply your Dart knowledge to build Flutter UIs!
 
 ### **Skills Progression**
 ```
@@ -340,8 +340,8 @@ Lesson 6: Navigation Systems
 
 ## 🆘 Need Help?
 
-- **Concept Questions**: Review the [concept documentation](../../modules/lesson_03/concept.md)
-- **Code Issues**: Compare with the [complete solution](../../answer/lesson_03/)
+- **Concept Questions**: Review the [concept documentation](/curriculum/modules/lesson_03/concept)
+- **Code Issues**: Review your implementation and ensure it follows Dart best practices
 - **Dart Syntax**: Check the official Dart language documentation
 - **General Support**: Use Flutter community forums and Discord
 

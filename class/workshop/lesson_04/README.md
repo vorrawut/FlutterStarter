@@ -28,7 +28,7 @@ code . # For VS Code
 
 ### Step 2: Complete the Workshop Tasks
 
-Open the workshop guide: [workshop_04.md](../../modules/lesson_04/workshop_04.md)
+Open the workshop guide: [workshop_04.md](/curriculum/modules/lesson_04/workshop_04)
 
 Follow the comprehensive step-by-step instructions to build your **Widget Gallery App**:
 
@@ -85,7 +85,7 @@ Try these additional exercises to deepen your understanding:
 
 ### Step 4: Compare with Solution
 
-Once you've completed the workshop, explore the enhanced solution in [answer/lesson_04/](../../answer/lesson_04/) to see:
+Once you've completed the workshop, you'll have learned:
 - Advanced widget implementations
 - Performance optimizations
 - Professional coding patterns
@@ -198,7 +198,7 @@ You've mastered widgets when you can:
 
 ## ➡️ What's Next?
 
-Ready for [Lesson 05: Layouts & UI Composition](../../modules/lesson_05/) where you'll build beautiful, responsive layouts and create a stunning profile application!
+Ready for [Lesson 05: Layouts & UI Composition](/curriculum/modules/lesson_05/concept) where you'll build beautiful, responsive layouts and create a stunning profile application!
 
 ### **In the Next Lesson**
 - Advanced layout techniques
@@ -208,9 +208,9 @@ Ready for [Lesson 05: Layouts & UI Composition](../../modules/lesson_05/) where 
 
 ## 🆘 Need Help?
 
-- **Concept Questions**: Review the [concept documentation](../../modules/lesson_04/concept.md)
-- **Visual Learning**: Check out the [diagrams](../../modules/lesson_04/diagram.md)
-- **Code Issues**: Compare with the [complete solution](../../answer/lesson_04/)
+- **Concept Questions**: Review the [concept documentation](/curriculum/modules/lesson_04/concept)
+- **Visual Learning**: Check out the [diagrams](/curriculum/modules/lesson_04/diagram)
+- **Code Issues**: Review your widget implementations and ensure they follow Flutter best practices
 - **General Support**: Ask questions in Flutter community forums
 
 ## 🎉 Congratulations!

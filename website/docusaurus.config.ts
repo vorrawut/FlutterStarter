@@ -84,6 +84,7 @@ const config = {
             to: '/answers',
             label: 'Answer Code',
             position: 'left',
+            docsPluginId: 'answers',
           },
           {
             href: 'https://github.com/vorrawutjudasri/FlutterStarter',
