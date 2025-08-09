@@ -43,7 +43,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: '../class',
           routeBasePath: '/curriculum',
-          editUrl: 'https://github.com/vorrawutjudasri/FlutterStarter/tree/main/class/',
+          editUrl: 'https://github.com/vorrawut/FlutterStarter/tree/main/class/',
           exclude: ['**/answer/**'],
         },
         blog: false,
@@ -84,10 +84,9 @@ const config = {
             to: '/answers',
             label: 'Answer Code',
             position: 'left',
-            docsPluginId: 'answers',
           },
           {
-            href: 'https://github.com/vorrawutjudasri/FlutterStarter',
+            href: 'https://github.com/vorrawut/FlutterStarter',
             label: 'GitHub',
             position: 'right',
           },
@@ -132,14 +131,6 @@ const config = {
                 label: 'Course Overview',
                 to: '/curriculum/COURSE_OVERVIEW',
               },
-              {
-                label: 'Instructor Guide',
-                to: '/curriculum/INSTRUCTOR_GUIDE',
-              },
-              {
-                label: 'Project Summary',
-                to: '/curriculum/PROJECT_SUMMARY',
-              },
             ],
           },
           {
@@ -147,11 +138,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/vorrawutjudasri/FlutterStarter',
+                href: 'https://github.com/vorrawut/FlutterStarter',
               },
               {
                 label: 'Demo System',
-                href: 'https://github.com/vorrawutjudasri/FlutterStarter/tree/main/class/demo',
+                href: 'https://github.com/vorrawut/FlutterStarter/tree/main/class/demo',
               },
             ],
           },
