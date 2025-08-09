@@ -1,0 +1,140 @@
+name: flutter_social_pro
+description: "FlutterSocial Pro - Complete real-world demo showcasing all Flutter curriculum concepts. A comprehensive social learning platform demonstrating clean architecture, state management, Firebase integration, testing, and production-ready patterns."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Core Dependencies (Lesson 1-5: Foundation)
+  cupertino_icons: ^1.0.6
+  
+  # UI & Navigation (Lesson 6-9: UI Mastery)
+  go_router: ^13.0.0                    # Advanced navigation with type safety
+  flutter_svg: ^2.0.9                  # SVG support for icons
+  cached_network_image: ^3.3.0         # Optimized image caching
+  shimmer: ^3.0.0                      # Loading skeleton animations
+  lottie: ^2.7.0                       # Rich animations
+  
+  # State Management (Lesson 10-15: State Management)
+  flutter_riverpod: ^2.4.9             # Recommended state management
+  flutter_bloc: ^8.1.3                 # Event-driven architecture
+  provider: ^6.1.1                     # Simple shared state
+  equatable: ^2.0.5                    # Value equality for state objects
+  
+  # Data & Networking (Lesson 16-18: Data Integration)
+  dio: ^5.4.0                          # HTTP client with interceptors
+  retrofit: ^4.0.3                     # Type-safe API client
+  json_annotation: ^4.8.1              # JSON serialization annotations
+  hive: ^2.2.3                         # NoSQL local database
+  hive_flutter: ^1.1.0                 # Hive Flutter integration
+  sqflite: ^2.3.0                      # SQLite local database
+  drift: ^2.14.0                       # Type-safe SQLite wrapper
+  
+  # Firebase & Cloud (Lesson 19-21: Firebase & Cloud) - Temporarily disabled for demo setup
+  # firebase_core: ^2.24.2               # Firebase core functionality
+  # firebase_auth: ^4.15.3               # Authentication services
+  # cloud_firestore: ^4.13.6             # NoSQL cloud database
+  # firebase_storage: ^11.5.6            # Cloud file storage
+  # firebase_messaging: ^14.7.10         # Push notifications
+  # firebase_crashlytics: ^3.4.8         # Crash reporting
+  # firebase_analytics: ^10.7.4          # User analytics
+  # firebase_performance: ^0.9.3+8       # Performance monitoring
+  # firebase_remote_config: ^4.3.8       # Feature flags and config
+  # cloud_functions: ^4.6.0              # Serverless functions
+  
+  # Platform Integration - Some disabled for demo setup
+  # google_sign_in: ^6.2.1               # Google authentication (requires Firebase)
+  # sign_in_with_apple: ^5.0.0           # Apple authentication
+  url_launcher: ^6.2.2                 # Launch URLs and deep links
+  image_picker: ^1.0.5                 # Camera and gallery access
+  # file_picker: ^6.1.1                  # File system access - temporarily disabled due to compatibility
+  share_plus: ^7.2.1                   # Share functionality
+  device_info_plus: ^9.1.1             # Device information
+  package_info_plus: ^4.2.0            # App information
+  
+  # Utilities & Tools
+  connectivity_plus: ^5.0.2            # Network connectivity monitoring
+  permission_handler: ^11.1.0          # Runtime permissions
+  path_provider: ^2.1.2                # File system paths
+  shared_preferences: ^2.2.2           # Simple key-value storage
+  encrypt: ^5.0.1                      # Data encryption
+  crypto: ^3.0.3                       # Cryptographic utilities
+  uuid: ^4.2.1                         # UUID generation
+  intl: ^0.19.0                        # Internationalization
+  logger: ^2.0.2+1                     # Advanced logging
+  
+  # UI Enhancement
+  flutter_staggered_grid_view: ^0.7.0  # Staggered grid layouts
+  flutter_slidable: ^3.0.1             # Swipe actions
+  pull_to_refresh: ^2.0.0              # Pull to refresh functionality
+  infinite_scroll_pagination: ^4.0.0   # Infinite scrolling
+  timeago: ^3.6.1                      # Relative time formatting
+  badges: ^3.1.2                       # Badge widgets
+  
+  # Development Tools
+  flutter_launcher_icons: ^0.13.1      # App icon generation
+  flutter_native_splash: ^2.3.6        # Splash screen generation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+    
+  # Code Generation & Build Tools
+  build_runner: ^2.4.7                 # Code generation runner
+  json_serializable: ^6.7.1            # JSON serialization generator
+  retrofit_generator: ^8.0.4           # Retrofit API generator
+  hive_generator: ^2.0.1               # Hive type adapter generator
+  drift_dev: ^2.14.0                   # SQLite schema generator
+  
+  # Testing Framework (Lesson 22-23: Testing)
+  mocktail: ^1.0.2                     # Mocking framework
+  bloc_test: ^9.1.5                    # Bloc testing utilities
+  # firebase_auth_mocks: ^0.13.0         # Firebase auth mocking (disabled with Firebase)
+  # fake_cloud_firestore: ^2.4.1+1       # Firestore mocking (disabled with Firebase)
+  network_image_mock: ^2.1.1           # Network image mocking
+  
+  # Code Quality & Analysis
+  flutter_lints: ^3.0.1                # Flutter linting rules
+  very_good_analysis: ^5.1.0           # Extended linting rules
+  
+  # Performance & Monitoring
+  patrol: ^3.0.1                       # Advanced integration testing
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    
+  # Fonts - Using system default for demo
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+
+# Configuration for tools
+# Configuration for icons and splash (assets not included in demo)
+# flutter_launcher_icons:
+#   android: "launcher_icon"
+#   ios: true
+#   image_path: "assets/icons/app_icon.png"
+#   min_sdk_android: 21
+#   
+# flutter_native_splash:
+#   color: "#ffffff"
+#   image: assets/icons/splash_logo.png
+#   android_12:
+#     image: assets/icons/splash_logo.png
+#     color: "#ffffff"
