@@ -1,4 +1,4 @@
-# 🔄 Lesson 23: Integration Testing + Mocking - Concepts
+# 🔄 Concepts
 
 ## 🎯 **Learning Objectives**
 

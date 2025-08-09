@@ -1,4 +1,4 @@
-# 🔄 Lesson 10: setState & Stateful Widgets - Workshop (Part 2)
+# 🔄 Workshop (Part 2)
 
 ## **Step 4: Task UI Components** ⏱️ *25 minutes*
 

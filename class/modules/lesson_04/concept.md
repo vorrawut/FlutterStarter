@@ -1,4 +1,4 @@
-# 📚 Concept 04: Widgets 101 - The Heart of Flutter
+# 📚 Concept
 
 ## 🎯 Objective
 Master the fundamental building blocks of Flutter UI development. Understand widget architecture, lifecycle, composition patterns, and best practices that form the foundation of all Flutter applications.

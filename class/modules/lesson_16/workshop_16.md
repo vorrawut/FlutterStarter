@@ -1,4 +1,4 @@
-# 🌐 Lesson 16: Networking with Dio & Retrofit - Workshop
+# 🌐 Workshop
 
 ## 🎯 **What We're Building**
 

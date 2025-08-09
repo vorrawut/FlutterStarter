@@ -1,4 +1,4 @@
-# 🚀 Lesson 26 Workshop: Publishing to App Stores - Complete Guide
+# 🚀 Workshop
 
 ## 🎯 **Workshop Mission**
 

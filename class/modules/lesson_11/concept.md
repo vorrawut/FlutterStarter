@@ -1,4 +1,4 @@
-# 🌳 Lesson 11: InheritedWidget & Provider - Concepts
+# 🌳 Concepts
 
 ## 🎯 **Learning Objectives**
 

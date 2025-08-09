@@ -1,4 +1,4 @@
-# 🛠 Workshop 04: Widgets 101 - The Building Blocks of Flutter
+# 🛠 Workshop
 
 ## 🎯 What We're Building
 An interactive **Widget Gallery App** that demonstrates every essential Flutter widget type. This hands-on exploration will teach you widget composition, lifecycle, and best practices through building a comprehensive reference tool.

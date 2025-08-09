@@ -1,4 +1,4 @@
-# 🛠 Workshop 02: Development Environment Mastery
+# 🛠 Workshop
 
 ## 🎯 Transform Your Development Environment
 

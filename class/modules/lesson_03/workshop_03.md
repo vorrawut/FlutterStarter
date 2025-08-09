@@ -1,4 +1,4 @@
-# 🛠 Workshop 03: Dart Fundamentals for Flutter
+# 🛠 Workshop
 
 ## 🎯 What We're Building
 A comprehensive understanding of Dart language fundamentals through hands-on coding exercises. We'll build a "Dart Learning Playground" app that demonstrates every key concept while creating a useful reference tool.

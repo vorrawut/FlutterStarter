@@ -1,4 +1,4 @@
-# 🔄 Lesson 10: setState & Stateful Widgets - Workshop
+# 🔄 Workshop
 
 ## 🎯 **What We're Building**
 

@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 17: Local Storage (Hive/SQLite)
+# 📜 Diagram
 
 ## 💾 **Local Storage (Hive/SQLite) - Data Persistence Mastery**
 

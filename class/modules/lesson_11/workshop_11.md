@@ -1,4 +1,4 @@
-# 🌳 Lesson 11: InheritedWidget & Provider - Workshop
+# 🌳 Workshop
 
 ## 🎯 **What We're Building**
 

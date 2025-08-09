@@ -1,4 +1,4 @@
-# 🚀 Lesson 25: CI/CD with GitHub Actions - Concepts
+# 🚀 Concepts
 
 ## 🎯 **Learning Objectives**
 

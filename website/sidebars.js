@@ -15,9 +15,7 @@
 const sidebars = {
   tutorialSidebar: [
     'README',
-    'COURSE_OVERVIEW',
     'PROJECT_SUMMARY',
-    'INSTRUCTOR_GUIDE',
     {
       type: 'category',
       label: '🟢 Phase 1: Foundation',

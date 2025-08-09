@@ -1,4 +1,4 @@
-# 🚀 Lesson 01: Introduction to Flutter - Concepts
+# 🚀 Concepts
 
 ## 🎯 **Learning Objectives**
 

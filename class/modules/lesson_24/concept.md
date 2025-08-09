@@ -1,4 +1,4 @@
-# 📊 Lesson 24: Error Handling & Logging - Concepts
+# 📊 Concepts
 
 ## 🎯 **Learning Objectives**
 

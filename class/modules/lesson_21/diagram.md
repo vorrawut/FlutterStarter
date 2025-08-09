@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 21: Chat/Social Feed App - Capstone Project
+# 📜 Diagram
 
 ## 💬 **Chat/Social Feed App - Phase 5 Capstone Excellence**
 

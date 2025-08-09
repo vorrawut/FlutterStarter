@@ -1,4 +1,4 @@
-# 🚀 Lesson 12: Riverpod 2.0 - Workshop (Part 2)
+# 🚀 Workshop (Part 2)
 
 ## **Step 4: Advanced Filter Providers** ⏱️ *25 minutes*
 

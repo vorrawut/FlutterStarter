@@ -1,4 +1,4 @@
-# ☁️ Lesson 20: Cloud Functions + Push Notifications - Concepts
+# ☁️ Concepts
 
 ## 🎯 **Learning Objectives**
 

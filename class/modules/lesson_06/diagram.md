@@ -1,4 +1,4 @@
-# 📊 Lesson 6: Navigation & Routing - Visual Learning Aids
+# 📜 Diagram
 
 ## 🎯 **Navigation Architecture Overview**
 

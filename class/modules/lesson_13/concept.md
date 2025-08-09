@@ -1,4 +1,4 @@
-# 🎯 Lesson 13: Bloc & Cubit - Concepts
+# 🎯 Concepts
 
 ## 🎯 **Learning Objectives**
 

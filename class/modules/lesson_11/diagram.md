@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 11: InheritedWidget & Provider
+# 📜 Diagram
 
 ## 🌳 **InheritedWidget & Provider State Management**
 

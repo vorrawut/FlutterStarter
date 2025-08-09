@@ -1,4 +1,4 @@
-# 🚀 Lesson 25: CI/CD with GitHub Actions - Workshop
+# 🚀 Workshop
 
 ## 🎯 **What We're Building**
 

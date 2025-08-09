@@ -1,4 +1,4 @@
-# 🔥 Lesson 19: Firebase Auth + Firestore - Workshop
+# 🔥 Workshop
 
 ## 🎯 **What We're Building**
 

@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 14: State Management Comparison
+# 📜 Diagram
 
 ## 🎯 **State Management Comparison - Architectural Decision Guide**
 

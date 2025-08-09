@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 10: setState & Stateful Widgets
+# 📜 Diagram
 
 ## 🔄 **StatefulWidget Lifecycle & State Management**
 

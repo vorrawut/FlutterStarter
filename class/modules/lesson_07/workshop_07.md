@@ -1,4 +1,4 @@
-# 🛠 Lesson 7: Theming Your App - Workshop
+# 🛠 Workshop
 
 ## 🎯 **What We're Building**
 

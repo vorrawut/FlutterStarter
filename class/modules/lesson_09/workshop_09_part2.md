@@ -1,4 +1,4 @@
-# 🎬 Lesson 9: Flutter Animations - Workshop (Part 2)
+# 🎬 Workshop (Part 2)
 
 ## **Step 4: Animated UI Components** ⏱️ *25 minutes*
 

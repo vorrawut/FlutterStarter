@@ -1,4 +1,4 @@
-# 🎯 Lesson 03: Dart Fundamentals for Flutter - Concepts
+# 🎯 Concepts
 
 ## 🎯 **Learning Objectives**
 

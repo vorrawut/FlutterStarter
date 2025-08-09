@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 19: Firebase Auth + Firestore
+# 📜 Diagram
 
 ## 🔥 **Firebase Auth + Firestore - Cloud Development Mastery**
 

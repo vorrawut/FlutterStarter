@@ -1,4 +1,4 @@
-# 🧪 Lesson 22: Unit & Widget Testing - Workshop
+# 🧪 Workshop
 
 ## 🎯 **What We're Building**
 

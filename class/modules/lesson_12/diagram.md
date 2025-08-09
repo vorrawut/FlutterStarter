@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 12: Riverpod 2.0
+# 📜 Diagram
 
 ## 🚀 **Riverpod 2.0 - Advanced State Management**
 

@@ -1,4 +1,4 @@
-# 🌳 Lesson 11: InheritedWidget & Provider - Workshop (Part 2)
+# 🌳 Workshop (Part 2)
 
 ## **Step 4: UI Components with Provider Integration** ⏱️ *35 minutes*
 

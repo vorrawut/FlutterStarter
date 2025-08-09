@@ -1,4 +1,4 @@
-# 🎯 Lesson 13: Bloc & Cubit - Workshop
+# 🎯 Workshop
 
 ## 🎯 **What We're Building**
 

@@ -1,4 +1,4 @@
-# 🔄 Lesson 23: Integration Testing + Mocking - Workshop
+# 🔄 Workshop
 
 ## 🎯 **What We're Building**
 

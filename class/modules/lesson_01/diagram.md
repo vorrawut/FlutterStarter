@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 01: Introduction to Flutter
+# 📜 Diagram
 
 This diagram illustrates the Flutter ecosystem, architecture, and development workflow.
 

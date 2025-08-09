@@ -1,4 +1,4 @@
-# 🛠 Lesson 7: Theming Your App - Workshop (Part 2)
+# 🛠 Workshop (Part 2)
 
 ## **Step 6: Theme Domain Layer** ⏱️ *15 minutes*
 

@@ -1,4 +1,4 @@
-# 🛠 Workshop 01: Introduction to Flutter - Your First Flutter Journey
+# 🛠 Workshop
 
 ## 🎯 **Workshop Mission**
 

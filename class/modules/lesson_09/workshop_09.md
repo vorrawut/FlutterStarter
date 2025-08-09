@@ -1,4 +1,4 @@
-# 🎬 Lesson 9: Flutter Animations - Workshop
+# 🎬 Workshop
 
 ## 🎯 **What We're Building**
 

@@ -1,4 +1,4 @@
-# 🚀 Lesson 26: Publishing to App Stores - Concepts
+# 🚀 Concepts
 
 ## 🎯 **Learning Objectives**
 

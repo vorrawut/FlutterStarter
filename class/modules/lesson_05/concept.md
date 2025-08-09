@@ -1,4 +1,4 @@
-# 📚 Concept 05: Advanced Layouts & UI Composition
+# 📚 Concept
 
 ## 🎯 Objective
 Master the advanced layout system that powers professional Flutter applications. Understand constraint-based layout algorithms, responsive design principles, and sophisticated UI composition patterns that create beautiful, efficient, and maintainable user interfaces.

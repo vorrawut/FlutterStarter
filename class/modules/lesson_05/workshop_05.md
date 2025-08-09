@@ -1,4 +1,4 @@
-# 🛠 Workshop 05: Advanced Layouts & UI Composition
+# 🛠 Workshop
 
 ## 🎯 What We're Building
 A sophisticated **Professional Profile Card App** that demonstrates advanced Flutter layout techniques. This comprehensive application will showcase complex UI composition, responsive design patterns, and professional layout strategies used in real-world applications.

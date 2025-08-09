@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 23: Integration Testing + Mocking
+# 📜 Diagram
 
 ## 🔄 **Integration Testing + Mocking - End-to-End Quality Assurance**
 

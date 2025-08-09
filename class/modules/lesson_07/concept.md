@@ -1,4 +1,4 @@
-# 🎨 Lesson 7: Theming Your App - Concepts
+# 🎨 Concepts
 
 ## 🎯 **Learning Objectives**
 

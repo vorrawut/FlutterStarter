@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 7: Theming Your App
+# 📜 Diagram
 
 ## 🎨 **Material 3 Theming Architecture**
 

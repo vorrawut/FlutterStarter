@@ -1,4 +1,4 @@
-# 🛠 Lesson 8: Responsive Layouts - Workshop
+# 🛠 Workshop
 
 ## 🎯 **What We're Building**
 

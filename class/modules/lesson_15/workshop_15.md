@@ -1,4 +1,4 @@
-# 🎯 Lesson 15: Mini Project - Auth + Theme App - Workshop
+# 🎯 Workshop
 
 ## 🎯 **What We're Building**
 

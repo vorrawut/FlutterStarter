@@ -1,4 +1,4 @@
-# 💾 Lesson 17: Local Storage (Hive/SQLite) - Workshop
+# 💾 Workshop
 
 ## 🎯 **What We're Building**
 

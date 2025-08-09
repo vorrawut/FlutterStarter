@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 13: Bloc & Cubit
+# 📜 Diagram
 
 ## 🎯 **Bloc & Cubit - Event-Driven Architecture**
 

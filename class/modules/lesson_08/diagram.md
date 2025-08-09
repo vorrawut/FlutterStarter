@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 8: Responsive Layouts
+# 📜 Diagram
 
 ## 📱 **Responsive Layout Architecture**
 

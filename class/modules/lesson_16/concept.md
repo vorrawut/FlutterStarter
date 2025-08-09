@@ -1,4 +1,4 @@
-# 🌐 Lesson 16: Networking with Dio & Retrofit - Concepts
+# 🌐 Concepts
 
 ## 🎯 **Learning Objectives**
 

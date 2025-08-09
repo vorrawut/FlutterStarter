@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 26: Publishing to App Stores
+# 📜 Diagram
 
 This diagram illustrates the complete app store publication process, from pre-submission preparation through post-launch monitoring and optimization.
 

@@ -1,4 +1,4 @@
-# 🎯 Lesson 14: State Management Comparison - Concepts
+# 🎯 Concepts
 
 ## 🎯 **Learning Objectives**
 

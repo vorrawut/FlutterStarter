@@ -1,4 +1,4 @@
-# 📱 Lesson 8: Responsive Layouts - Concepts
+# 📱 Concepts
 
 ## 🎯 **Learning Objectives**
 

@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 24: Error Handling & Logging
+# 📜 Diagram
 
 ## 📊 **Error Handling & Logging - Production Monitoring Excellence**
 

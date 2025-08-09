@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 16: Networking with Dio & Retrofit
+# 📜 Diagram
 
 ## 🌐 **Networking with Dio & Retrofit - API Integration Mastery**
 

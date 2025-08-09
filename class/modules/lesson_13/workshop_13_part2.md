@@ -1,4 +1,4 @@
-# 🎯 Lesson 13: Bloc & Cubit - Workshop (Part 2)
+# 🎯 Workshop (Part 2)
 
 ## **Step 3: Bloc & Cubit Implementation** ⏱️ *35 minutes*
 

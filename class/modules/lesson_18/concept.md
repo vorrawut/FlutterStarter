@@ -1,4 +1,4 @@
-# 📰 Lesson 18: Complete News App Project - Concepts
+# 📰 Concepts
 
 ## 🎯 **Learning Objectives**
 

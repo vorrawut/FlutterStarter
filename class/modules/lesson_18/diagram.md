@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 18: Complete News App Project
+# 📜 Diagram
 
 ## 📰 **Complete News App Project - Full-Stack Data Integration**
 

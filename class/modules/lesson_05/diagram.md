@@ -1,4 +1,4 @@
-# 📊 Diagrams 05: Advanced Layout Architecture
+# 📜 Diagram
 
 ## 🏗️ Flutter Layout System Architecture
 

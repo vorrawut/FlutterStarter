@@ -1,4 +1,4 @@
-# 🛠 Lesson 7: Theming Your App - Workshop (Part 3)
+# 🛠 Workshop (Part 3)
 
 ## **Step 9: Theme UI Components** ⏱️ *20 minutes*
 

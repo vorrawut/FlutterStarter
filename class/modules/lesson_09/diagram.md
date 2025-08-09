@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 9: Flutter Animations
+# 📜 Diagram
 
 ## 🎬 **Flutter Animation Architecture**
 

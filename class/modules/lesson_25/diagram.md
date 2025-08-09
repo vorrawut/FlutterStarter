@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 25: CI/CD with GitHub Actions
+# 📜 Diagram
 
 ## 🚀 **CI/CD with GitHub Actions - Automated Deployment Excellence**
 

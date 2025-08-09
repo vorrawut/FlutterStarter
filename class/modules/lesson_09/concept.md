@@ -1,4 +1,4 @@
-# 🎬 Lesson 9: Flutter Animations - Concepts
+# 🎬 Concepts
 
 ## 🎯 **Learning Objectives**
 

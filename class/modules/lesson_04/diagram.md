@@ -1,4 +1,4 @@
-# 📊 Diagrams 04: Widget Architecture & Composition
+# 📜 Diagram
 
 ## 🏗️ Widget Tree Architecture
 

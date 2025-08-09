@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 02: Development Environment Mastery
+# 📜 Diagram
 
 This diagram illustrates the complete Flutter development environment ecosystem and the relationships between different tools and processes.
 

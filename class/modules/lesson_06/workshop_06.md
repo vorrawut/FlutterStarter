@@ -1,4 +1,4 @@
-# 🛠️ Workshop 6: Navigation & Routing Masterclass
+# 🛠️ Workshop
 
 ## 🎯 **What We're Building**
 

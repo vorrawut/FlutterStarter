@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 03: Dart Fundamentals for Flutter
+# 📜 Diagram
 
 This diagram illustrates the comprehensive Dart language ecosystem and how different concepts build upon each other to create powerful Flutter applications.
 

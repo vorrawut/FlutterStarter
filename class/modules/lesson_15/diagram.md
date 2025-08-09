@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 15: Mini Project - Auth + Theme App
+# 📜 Diagram
 
 ## 🎯 **Mini Project - AuthFlow Pro: Hybrid State Management Architecture**
 

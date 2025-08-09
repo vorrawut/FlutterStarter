@@ -1,4 +1,4 @@
-# 🛠 Lesson 8: Responsive Layouts - Workshop (Part 2)
+# 🛠 Workshop (Part 2)
 
 ## **Step 5: Dashboard State Management** ⏱️ *15 minutes*
 

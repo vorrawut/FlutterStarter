@@ -1,4 +1,4 @@
-# 🧭 Lesson 6: Navigation & Routing Concepts
+# 🧭 Concepts
 
 ## 🎯 **Learning Objective**
 

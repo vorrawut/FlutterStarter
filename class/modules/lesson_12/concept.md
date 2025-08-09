@@ -1,4 +1,4 @@
-# 🚀 Lesson 12: Riverpod 2.0 - Concepts
+# 🚀 Concepts
 
 ## 🎯 **Learning Objectives**
 

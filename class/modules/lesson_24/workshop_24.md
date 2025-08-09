@@ -1,4 +1,4 @@
-# 📊 Lesson 24: Error Handling & Logging - Workshop
+# 📊 Workshop
 
 ## 🎯 **What We're Building**
 

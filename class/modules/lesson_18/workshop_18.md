@@ -1,4 +1,4 @@
-# 📰 Lesson 18: Complete News App Project - Workshop
+# 📰 Workshop
 
 ## 🎯 **What We're Building**
 

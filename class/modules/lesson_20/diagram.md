@@ -1,4 +1,4 @@
-# 📜 Diagram for Lesson 20: Cloud Functions + Push Notifications
+# 📜 Diagram
 
 ## ☁️ **Cloud Functions + Push Notifications - Serverless Backend Mastery**
 
