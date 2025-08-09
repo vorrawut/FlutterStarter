@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/vorrawut/FlutterStarter/tree/main/flutter_starter/',
+            'https://github.com/your-github-username/FlutterStarter/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -73,6 +73,8 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+
+
 
   themeConfig: {
     // Replace with your project's social card
@@ -147,11 +149,12 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Flutter Starter. Built with Docusaurus.`,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-      additionalLanguages: ['dart', 'bash', 'yaml', 'json'],
-    },
+          prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+        additionalLanguages: ['dart', 'bash', 'yaml', 'json'],
+      },
+
   } satisfies Preset.ThemeConfig,
 };
 

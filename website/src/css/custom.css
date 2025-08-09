@@ -161,194 +161,69 @@ table {
   }
 }
 
-/* Simple, Clean Sidebar Enhancements - Working with Docusaurus defaults */
+/* ---------- ULTRA-SIMPLE SIDEBAR FIXES ---------- */
 
-/* Sidebar container - keep default positioning but add some styling */
+/* Basic sidebar container */
 .theme-doc-sidebar-container {
-  border-right: 1px solid var(--ifm-color-emphasis-200);
-  background-color: var(--ifm-background-surface-color);
+  width: 300px;
 }
 
-/* Sidebar menu improvements */
+/* Sidebar scrolling area */
 .theme-doc-sidebar-menu {
-  padding: 1rem;
-  max-height: calc(100vh - 60px);
+  height: calc(100vh - var(--ifm-navbar-height, 60px) - 1rem);
   overflow-y: auto;
+  padding: 1rem 0;
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-.theme-doc-sidebar-menu::-webkit-scrollbar {
-  width: 6px;
+/* Menu indentation - keep it simple */
+.menu__list .menu__list {
+  margin-left: 1rem;
 }
 
-.theme-doc-sidebar-menu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.theme-doc-sidebar-menu::-webkit-scrollbar-thumb {
-  background-color: var(--ifm-color-emphasis-300);
-  border-radius: 3px;
-}
-
-.theme-doc-sidebar-menu::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ifm-color-emphasis-400);
-}
-
-/* Phase headers styling (Level 1 categories) */
-.menu__list .menu__list-item .menu__link.menu__link--sublist {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--ifm-color-primary);
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  background: var(--ifm-color-emphasis-100);
-  margin-bottom: 0.5rem;
-  border-left: 4px solid var(--ifm-color-primary);
-}
-
-.menu__list .menu__list-item .menu__link.menu__link--sublist:hover {
-  background: var(--ifm-color-emphasis-200);
-  transform: translateX(2px);
-}
-
-/* Lesson headers styling (Level 2 categories) */
-.menu__list .menu__list .menu__list-item .menu__link.menu__link--sublist {
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.6rem 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 0.25rem;
-  background: var(--ifm-color-emphasis-50);
-  border-left: 3px solid var(--ifm-color-primary-light);
-  margin-left: 0.5rem;
-}
-
-.menu__list .menu__list .menu__list-item .menu__link.menu__link--sublist:hover {
-  background: var(--ifm-color-emphasis-100);
-  border-left-color: var(--ifm-color-primary);
-}
-
-/* Material links styling (Level 3) */
-.menu__list .menu__list .menu__list .menu__list-item .menu__link {
-  font-size: 0.8rem;
-  padding: 0.4rem 1rem;
-  margin: 0.2rem 0;
-  border-radius: 4px;
-  color: var(--ifm-color-content-secondary);
-  margin-left: 1.5rem;
-  position: relative;
-}
-
-.menu__list .menu__list .menu__list .menu__list-item .menu__link:before {
-  content: '•';
-  position: absolute;
-  left: -0.75rem;
-  color: var(--ifm-color-primary);
-  font-weight: bold;
-}
-
-.menu__list .menu__list .menu__list .menu__list-item .menu__link:hover {
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-content);
-}
-
-/* Active state styling */
+/* Active link styling */
 .menu__link--active {
-  background: var(--ifm-color-primary);
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-weight: 600 !important;
+  color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-menu-color-background-active) !important;
 }
 
-.menu__list .menu__list .menu__list .menu__list-item .menu__link--active:before {
-  color: white;
-}
-
-/* Ensure active item is always visible */
-.menu__link--active {
-  scroll-margin: 100px;
-}
-
-/* Auto-expand parent categories when child is active */
-.menu__list-item:has(.menu__link--active) {
-  /* This ensures parent categories stay expanded */
-}
-
-/* Enhanced Phase 6 specific styling for better visibility */
-.menu__list .menu__list-item:nth-last-child(-n+2) {
-  /* Last two phase items (including Phase 6) get special attention */
-  margin-bottom: 1rem;
-}
-
-/* Ensure lessons 25-26 are always visible when in Phase 6 */
-.menu__list .menu__list-item .menu__link[href*="lesson-25"],
-.menu__list .menu__list-item .menu__link[href*="lesson-26"] {
-  font-weight: 600;
-  background: var(--ifm-color-emphasis-75);
-  border-left: 2px solid var(--ifm-color-success);
-}
-
-.menu__list .menu__list-item .menu__link[href*="lesson-25"]:hover,
-.menu__list .menu__list-item .menu__link[href*="lesson-26"]:hover {
-  background: var(--ifm-color-emphasis-150);
-  border-left-color: var(--ifm-color-success-dark);
-}
-
-/* Collapsible arrows */
-.menu__link--sublist-caret:after {
-  content: '▶';
-  float: right;
-  transition: transform 0.2s ease;
-  color: var(--ifm-color-primary);
-  font-size: 0.7rem;
-}
-
-.menu__list-item--collapsed .menu__link--sublist-caret:after {
-  transform: rotate(0deg);
-}
-
-.menu__list-item:not(.menu__list-item--collapsed) .menu__link--sublist-caret:after {
-  transform: rotate(90deg);
-}
-
-/* Spacing improvements */
+/* Menu item spacing */
 .menu__list-item {
-  margin: 0.25rem 0;
+  margin: 4px 0;
 }
 
+/* Menu link styling */
+.menu__link {
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-menu-color-background-hover);
+}
+
+/* Caret styling */
+.menu__caret {
+  transition: transform 0.2s ease;
+}
+
+/* Category items */
+.theme-doc-sidebar-item-category {
+  margin: 8px 0;
+}
+
+/* Collapsible menu behavior */
 .menu__list-item--collapsed .menu__list {
-  height: 0;
-  overflow: hidden;
+  display: none;
 }
 
-/* Mobile responsiveness */
+/* Fix sidebar on mobile */
 @media (max-width: 996px) {
-  .theme-doc-sidebar-menu {
-    max-height: 70vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+  .theme-doc-sidebar-container {
+    width: 100%;
   }
-  
-  /* Ensure lessons are visible on mobile */
-  .menu__list .menu__list-item .menu__link[href*="lesson-25"],
-  .menu__list .menu__list-item .menu__link[href*="lesson-26"] {
-    background: var(--ifm-color-emphasis-100);
-    font-weight: 500;
-  }
-}
-
-/* Dark mode adjustments */
-[data-theme='dark'] .menu__link.menu__link--sublist {
-  background: var(--ifm-color-emphasis-200);
-}
-
-[data-theme='dark'] .menu__list .menu__list .menu__list-item .menu__link {
-  color: var(--ifm-color-content);
-}
-
-[data-theme='dark'] .menu__list .menu__list .menu__list .menu__list-item .menu__link:hover {
-  background-color: var(--ifm-color-emphasis-200);
 }
 
 /* Enhanced footer */
