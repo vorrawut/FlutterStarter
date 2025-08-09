@@ -164,10 +164,84 @@ table {
 /* Sidebar enhancements */
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-color-emphasis-200) !important;
+  width: 300px !important;
+  min-width: 300px !important;
 }
 
 .theme-doc-sidebar-menu {
   padding: 1rem !important;
+}
+
+/* Fix sidebar item spacing */
+.theme-doc-sidebar-item-category {
+  margin-bottom: 0.5rem !important;
+}
+
+.theme-doc-sidebar-item-link {
+  margin-bottom: 0.25rem !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-doc-sidebar-item-link:hover {
+  background-color: var(--ifm-color-emphasis-100) !important;
+}
+
+/* Active state styling */
+.theme-doc-sidebar-item-link--active {
+  background-color: var(--ifm-color-primary-lightest) !important;
+  border-left: 3px solid var(--ifm-color-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Category header styling */
+.theme-doc-sidebar-item-category-level-1 > .theme-doc-sidebar-item-category-level-1__link {
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  color: var(--ifm-color-primary) !important;
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  background: var(--ifm-color-emphasis-100) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.theme-doc-sidebar-item-category-level-2 > .theme-doc-sidebar-item-category-level-2__link {
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* Lesson content links styling */
+.theme-doc-sidebar-item-link-level-3 {
+  font-size: 0.8rem !important;
+  padding: 0.4rem 1rem !important;
+  margin-left: 1rem !important;
+  border-left: 2px solid var(--ifm-color-emphasis-200) !important;
+}
+
+.theme-doc-sidebar-item-link-level-3:before {
+  content: '';
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: var(--ifm-color-emphasis-400) !important;
+  display: inline-block !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Collapse/expand animation */
+.theme-doc-sidebar-item-category .theme-doc-sidebar-item-category-collapsible {
+  transition: all 0.3s ease !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    width: 280px !important;
+    min-width: 280px !important;
+  }
 }
 
 /* Enhanced footer */
