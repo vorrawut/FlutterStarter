@@ -1,0 +1,95 @@
+{
+  "@@locale": "th",
+  "appTitle": "FlutterSocial Pro",
+  
+  "welcomeTitle": "ยินดีต้อนรับสู่ FlutterSocial Pro",
+  "welcomeDescription": "เชื่อมต่อกับเพื่อนผู้เรียน แบ่งปันความรู้ และเติบโตไปด้วยกันในการเดินทาง Flutter ของคุณ",
+  
+  "groupsTitle": "เข้าร่วมกลุ่มศึกษา",
+  "groupsDescription": "ร่วมมือกับเพื่อน เข้าร่วมการสนทนา และเรียนรู้จากนักพัฒนาที่มีประสบการณ์",
+  
+  "quizTitle": "ทำแบบทดสอบเชิงโต้ตอบ",
+  "quizDescription": "ทดสอบความรู้ของคุณ ติดตามความก้าวหน้า และรับรางวัลขณะที่คุณเชี่ยวชาญ Flutter",
+  
+  "chatTitle": "แชทแบบเรียลไทม์",
+  "chatDescription": "รับความช่วยเหลือทันที แบ่งปันโค้ด และสร้างความสัมพันธ์ที่ยั่งยืนกับชุมชน",
+  
+  "progressTitle": "ติดตามความก้าวหน้า",
+  "progressDescription": "ติดตามการเดินทางการเรียนรู้ ฉลองเป้าหมาย และปลดล็อกระดับความสำเร็จใหม่",
+  
+  "getStarted": "เริ่มต้น",
+  "skip": "ข้าม",
+  "next": "ถัดไป",
+  "back": "กลับ",
+  "finish": "เสร็จสิ้น",
+  
+  "loginTitle": "ยินดีต้อนรับกลับ",
+  "loginSubtitle": "เข้าสู่ระบบเพื่อดำเนินการต่อในการเดินทาง Flutter ของคุณ",
+  "email": "อีเมล",
+  "password": "รหัสผ่าน",
+  "login": "เข้าสู่ระบบ",
+  "demoLogin": "เข้าสู่ระบบทดลอง",
+  "loginAsDeveloper": "เข้าสู่ระบบในฐานะนักพัฒนา",
+  "loginAsStudent": "เข้าสู่ระบบในฐานะนักเรียน",
+  "loginAsInstructor": "เข้าสู่ระบบในฐานะผู้สอน",
+  "forgotPassword": "ลืมรหัสผ่าน?",
+  "dontHaveAccount": "ยังไม่มีบัญชี?",
+  "createAccount": "สร้างบัญชี",
+  
+  "signupTitle": "สร้างบัญชี",
+  "signupSubtitle": "เข้าร่วมชุมชนการเรียนรู้ Flutter",
+  "firstName": "ชื่อ",
+  "lastName": "นามสกุล",
+  "confirmPassword": "ยืนยันรหัสผ่าน",
+  "signUp": "สมัครสมาชิก",
+  "alreadyHaveAccount": "มีบัญชีอยู่แล้ว?",
+  "signIn": "เข้าสู่ระบบ",
+  "agreeToTerms": "ฉันยอมรับข้อกำหนดและเงื่อนไข",
+  
+  "dashboard": "แดชบอร์ด",
+  "profile": "โปรไฟล์",
+  "groups": "กลุ่ม",
+  "chat": "แชท",
+  "quiz": "แบบทดสอบ",
+  "settings": "การตั้งค่า",
+  
+  "language": "ภาษา",
+  "english": "English",
+  "thai": "ไทย",
+  "changeLanguage": "เปลี่ยนภาษา",
+  
+  "myProgress": "ความก้าวหน้าของฉัน",
+  "recentActivities": "กิจกรรมล่าสุด",
+  "joinedGroups": "กลุ่มที่เข้าร่วม",
+  "completedQuizzes": "แบบทดสอบที่เสร็จสิ้น",
+  "currentStreak": "สตรีคปัจจุบัน",
+  "totalPoints": "คะแนนรวม",
+  
+  "searchGroups": "ค้นหากลุ่ม",
+  "createGroup": "สร้างกลุ่ม",
+  "joinGroup": "เข้าร่วมกลุ่ม",
+  "leaveGroup": "ออกจากกลุ่ม",
+  "groupMembers": "สมาชิก",
+  
+  "startChat": "เริ่มแชท",
+  "sendMessage": "ส่งข้อความ",
+  "typeMessage": "พิมพ์ข้อความ...",
+  
+  "takeQuiz": "ทำแบบทดสอบ",
+  "viewResults": "ดูผลลัพธ์",
+  "quizScore": "คะแนน: {score}%",
+  
+  "darkMode": "โหมดมืด",
+  "notifications": "การแจ้งเตือน",
+  "logout": "ออกจากระบบ",
+  
+  "error": "ข้อผิดพลาด",
+  "success": "สำเร็จ",
+  "loading": "กำลังโหลด...",
+  "retry": "ลองใหม่",
+  "cancel": "ยกเลิก",
+  "save": "บันทึก",
+  "edit": "แก้ไข",
+  "delete": "ลบ",
+  "confirm": "ยืนยัน"
+}

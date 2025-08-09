@@ -77,6 +77,26 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     }
   }
 
+  Future<void> _handleDemoLogin() async {
+    setState(() {
+      _isLoading = true;
+    });
+    
+    // Simulate demo login
+    await Future.delayed(const Duration(seconds: 1));
+    
+    // Update auth state
+    ref.read(authStateProvider.notifier).state = true;
+    
+    if (mounted) {
+      context.go(AppRoutes.home);
+    }
+    
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -112,10 +132,25 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
                   // Register Link
                   _buildRegisterLink(theme),
-                ],
-              ),
-            ),
-          ),
+                  
+                  const SizedBox(height: 24),
+                  
+                  // Demo Login Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: _isLoading ? null : _handleDemoLogin,
+                      icon: const Icon(Icons.account_circle),
+                      label: const Text('Demo Login (Student)'),
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                      ),
+                    ),
+                  ),
+                      ],
+                    ),
+                  ),
+                ),
         ),
       ),
     );

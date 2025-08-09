@@ -1,0 +1,114 @@
+{
+  "@@locale": "en",
+  "appTitle": "FlutterSocial Pro",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  
+  "welcomeTitle": "Welcome to FlutterSocial Pro",
+  "@welcomeTitle": {
+    "description": "Welcome message title"
+  },
+  
+  "welcomeDescription": "Connect with fellow learners, share knowledge, and grow together in your Flutter journey.",
+  "@welcomeDescription": {
+    "description": "Welcome message description"
+  },
+  
+  "groupsTitle": "Join Study Groups",
+  "groupsDescription": "Collaborate with peers, participate in discussions, and learn from experienced developers.",
+  
+  "quizTitle": "Take Interactive Quizzes",
+  "quizDescription": "Test your knowledge, track your progress, and earn achievements as you master Flutter.",
+  
+  "chatTitle": "Chat in Real-time",
+  "chatDescription": "Get instant help, share code snippets, and build lasting connections with the community.",
+  
+  "progressTitle": "Track Your Progress",
+  "progressDescription": "Monitor your learning journey, celebrate milestones, and unlock new achievement levels.",
+  
+  "getStarted": "Get Started",
+  "skip": "Skip",
+  "next": "Next",
+  "back": "Back",
+  "finish": "Finish",
+  
+  "loginTitle": "Welcome Back",
+  "loginSubtitle": "Sign in to continue your Flutter journey",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "demoLogin": "Demo Login",
+  "loginAsDeveloper": "Login as Developer",
+  "loginAsStudent": "Login as Student",
+  "loginAsInstructor": "Login as Instructor",
+  "forgotPassword": "Forgot Password?",
+  "dontHaveAccount": "Don't have an account?",
+  "createAccount": "Create Account",
+  
+  "signupTitle": "Create Account",
+  "signupSubtitle": "Join the Flutter learning community",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "confirmPassword": "Confirm Password",
+  "signUp": "Sign Up",
+  "alreadyHaveAccount": "Already have an account?",
+  "signIn": "Sign In",
+  "agreeToTerms": "I agree to the Terms & Conditions",
+  
+  "dashboard": "Dashboard",
+  "profile": "Profile",
+  "groups": "Groups",
+  "chat": "Chat",
+  "quiz": "Quiz",
+  "settings": "Settings",
+  
+  "language": "Language",
+  "english": "English",
+  "thai": "ไทย",
+  "changeLanguage": "Change Language",
+  
+  "myProgress": "My Progress",
+  "recentActivities": "Recent Activities",
+  "joinedGroups": "Joined Groups",
+  "completedQuizzes": "Completed Quizzes",
+  "currentStreak": "Current Streak",
+  "totalPoints": "Total Points",
+  
+  "searchGroups": "Search Groups",
+  "createGroup": "Create Group",
+  "joinGroup": "Join Group",
+  "leaveGroup": "Leave Group",
+  "groupMembers": "Members",
+  
+  "startChat": "Start Chat",
+  "sendMessage": "Send Message",
+  "typeMessage": "Type a message...",
+  
+  "takeQuiz": "Take Quiz",
+  "viewResults": "View Results",
+  "quizScore": "Score: {score}%",
+  "@quizScore": {
+    "description": "Quiz score percentage",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  
+  "darkMode": "Dark Mode",
+  "notifications": "Notifications",
+  "logout": "Logout",
+  
+  "error": "Error",
+  "success": "Success",
+  "loading": "Loading...",
+  "retry": "Retry",
+  "cancel": "Cancel",
+  "save": "Save",
+  "edit": "Edit",
+  "delete": "Delete",
+  "confirm": "Confirm"
+}

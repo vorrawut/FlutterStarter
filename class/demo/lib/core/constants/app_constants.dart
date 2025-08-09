@@ -57,6 +57,7 @@ class AppConstants {
   static const String achievementsCollection = 'achievements';
   
   // UI Constants
+  static const double defaultPadding = 16.0;
   static const double borderRadius = 12.0;
   static const double cardElevation = 2.0;
   static const double iconSize = 24.0;

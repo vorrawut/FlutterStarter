@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:firebase_core/firebase_core.dart'; // Temporarily disabled for demo
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'core/constants/app_constants.dart';
+import 'core/providers/language_provider.dart';
 import 'core/theme/app_theme.dart';
 import 'core/router/app_router.dart';
 import 'core/storage/storage_service.dart';
 // import 'firebase_options.dart'; // Temporarily disabled for demo
+import 'l10n/app_localizations.dart';
 
 /// FlutterSocial Pro - Complete Demo Application
 /// 
@@ -67,8 +70,9 @@ class FlutterSocialProApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch theme provider for reactive theme changes
+    // Watch theme and language providers for reactive changes
     final themeMode = ref.watch(themeModeProvider);
+    final locale = ref.watch(languageProvider);
     final router = ref.watch(appRouterProvider);
     
     return MaterialApp.router(
@@ -84,8 +88,15 @@ class FlutterSocialProApp extends ConsumerWidget {
       // Navigation Configuration (Lesson 6: Navigation & Routing)
       routerConfig: router,
       
-      // Localization Support
-      supportedLocales: AppConstants.supportedLocales,
+      // Localization Support (Lesson 2: Environment Setup)
+      locale: locale,
+      supportedLocales: LanguageNotifier.supportedLocales,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       
       // Builder for responsive design and global scaffolds
       builder: (context, child) {

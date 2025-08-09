@@ -50,6 +50,79 @@ class StorageService {
   }
   
   // ========================================
+  // Generic Storage Operations
+  // ========================================
+  
+  /// Generic read method for simple key-value storage
+  static Future<T?> read<T>(String key) async {
+    _ensureInitialized();
+    
+    try {
+      if (T == String) {
+        return _prefs.getString(key) as T?;
+      } else if (T == int) {
+        return _prefs.getInt(key) as T?;
+      } else if (T == bool) {
+        return _prefs.getBool(key) as T?;
+      } else if (T == double) {
+        return _prefs.getDouble(key) as T?;
+      } else {
+        // For complex objects, use Hive
+        return _hiveBox.get(key) as T?;
+      }
+    } catch (e) {
+      return null;
+    }
+  }
+  
+  /// Generic write method for simple key-value storage
+  static Future<void> write<T>(String key, T value) async {
+    _ensureInitialized();
+    
+    try {
+      if (value is String) {
+        await _prefs.setString(key, value);
+      } else if (value is int) {
+        await _prefs.setInt(key, value);
+      } else if (value is bool) {
+        await _prefs.setBool(key, value);
+      } else if (value is double) {
+        await _prefs.setDouble(key, value);
+      } else {
+        // For complex objects, use Hive
+        await _hiveBox.put(key, value);
+      }
+    } catch (e) {
+      throw StorageException('Failed to write $key: $e');
+    }
+  }
+  
+  /// Generic delete method
+  static Future<void> delete(String key) async {
+    _ensureInitialized();
+    
+    try {
+      // Try both storage systems
+      await _prefs.remove(key);
+      await _hiveBox.delete(key);
+    } catch (e) {
+      throw StorageException('Failed to delete $key: $e');
+    }
+  }
+  
+  /// Clear all storage
+  static Future<void> clear() async {
+    _ensureInitialized();
+    
+    try {
+      await _prefs.clear();
+      await _hiveBox.clear();
+    } catch (e) {
+      throw StorageException('Failed to clear storage: $e');
+    }
+  }
+
+  // ========================================
   // Theme Management
   // ========================================
   
