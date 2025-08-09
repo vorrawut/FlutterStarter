@@ -1,0 +1,156 @@
+name: connectpro_ultimate_publishing
+description: ConnectPro Ultimate - App Store Publishing Excellence
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Core App Dependencies
+  flutter_riverpod: ^2.4.9
+  go_router: ^12.1.3
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  
+  # Firebase & Cloud Services
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  firebase_messaging: ^14.7.10
+  firebase_analytics: ^10.7.4
+  firebase_crashlytics: ^3.4.8
+  firebase_remote_config: ^4.3.8
+  firebase_app_check: ^0.2.1+8
+  
+  # Networking & API
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  json_annotation: ^4.8.1
+  
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.2
+  
+  # State Management & Architecture
+  freezed_annotation: ^2.4.1
+  
+  # UI & User Experience
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  lottie: ^2.7.0
+  flutter_staggered_grid_view: ^0.7.0
+  
+  # Utilities
+  uuid: ^4.2.1
+  package_info_plus: ^4.2.0
+  device_info_plus: ^9.1.1
+  connectivity_plus: ^5.0.2
+  permission_handler: ^11.1.0
+  image_picker: ^1.0.5
+  photo_view: ^0.14.0
+  
+  # App Store Optimization & Analytics
+  in_app_review: ^2.0.8
+  share_plus: ^7.2.1
+  url_launcher: ^6.2.2
+  app_settings: ^5.1.1
+  
+  # Push Notifications
+  flutter_local_notifications: ^16.3.0
+  
+  # Development & Debugging
+  logger: ^2.0.2+1
+  flutter_native_splash: ^2.3.6
+  flutter_launcher_icons: ^0.13.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Code Generation
+  build_runner: ^2.4.7
+  freezed: ^2.4.6
+  json_serializable: ^6.7.1
+  retrofit_generator: ^8.0.6
+  hive_generator: ^2.0.1
+  
+  # Testing
+  mockito: ^5.4.2
+  fake_cloud_firestore: ^2.4.1+1
+  firebase_auth_mocks: ^0.13.0
+  integration_test:
+    sdk: flutter
+  patrol: ^2.2.0
+  flutter_driver:
+    sdk: flutter
+  
+  # Analysis & Quality
+  flutter_lints: ^3.0.1
+  very_good_analysis: ^5.1.0
+  dependency_validator: ^3.2.2
+  
+  # Coverage & Reporting
+  coverage: ^1.7.1
+  test_coverage: ^0.4.3
+  lcov: ^5.7.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    - assets/store/
+    - assets/screenshots/
+    - assets/promotional/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+
+flutter_native_splash:
+  color: "#1565C0"
+  image: assets/images/splash_logo.png
+  color_dark: "#0D47A1"
+  image_dark: assets/images/splash_logo_dark.png
+  android_12:
+    image: assets/images/splash_logo_android12.png
+    icon_background_color: "#1565C0"
+    image_dark: assets/images/splash_logo_android12_dark.png
+    icon_background_color_dark: "#0D47A1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/images/app_icon_web.png"
+    background_color: "#1565C0"
+    theme_color: "#1565C0"
+  windows:
+    generate: true
+    image_path: "assets/images/app_icon_windows.png"
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: "assets/images/app_icon_macos.png"
+
