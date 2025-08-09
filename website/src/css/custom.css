@@ -1,0 +1,181 @@
+/**
+ * Flutter Starter - Custom Styles
+ * Modern, clean design with excellent typography and code presentation
+ */
+
+/* Flutter brand colors and modern variables */
+:root {
+  /* Flutter brand colors */
+  --ifm-color-primary: #0175c2;
+  --ifm-color-primary-dark: #0066ad;
+  --ifm-color-primary-darker: #0061a4;
+  --ifm-color-primary-darkest: #005087;
+  --ifm-color-primary-light: #1f84d1;
+  --ifm-color-primary-lighter: #298ad5;
+  --ifm-color-primary-lightest: #4da3e0;
+  
+  /* Enhanced typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  --ifm-code-font-size: 0.875rem;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+  
+  /* Enhanced spacing */
+  --ifm-container-width-xl: 1400px;
+  --ifm-container-width: 1200px;
+  
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+  
+  /* Enhanced colors */
+  --ifm-color-success: #00c853;
+  --ifm-color-info: #0175c2;
+  --ifm-color-warning: #ff9800;
+  --ifm-color-danger: #f44336;
+}
+
+/* Dark mode optimizations */
+[data-theme='dark'] {
+  --ifm-color-primary: #40c4ff;
+  --ifm-color-primary-dark: #26b6ff;
+  --ifm-color-primary-darker: #1faeff;
+  --ifm-color-primary-darkest: #0096ff;
+  --ifm-color-primary-light: #5accff;
+  --ifm-color-primary-lighter: #66d2ff;
+  --ifm-color-primary-lightest: #8ae0ff;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced code blocks */
+.prism-code {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .prism-code {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+/* Code block enhancements */
+.theme-code-block {
+  margin: 1.5rem 0 !important;
+}
+
+.theme-code-block .prism-code {
+  padding: 1.25rem !important;
+}
+
+/* Copy button styling */
+.clean-btn {
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.clean-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced content container */
+.main-wrapper {
+  max-width: var(--ifm-container-width-xl) !important;
+  margin: 0 auto !important;
+}
+
+/* Improved headings */
+.markdown h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+.markdown h2 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.markdown h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Enhanced tables */
+table {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* Admonitions styling */
+.alert {
+  border-radius: 12px !important;
+  border-left: 4px solid var(--ifm-alert-border-color) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* Enhanced navbar */
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Mermaid diagram enhancements */
+.mermaid {
+  text-align: center !important;
+  margin: 2rem 0 !important;
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  background: var(--ifm-color-emphasis-100) !important;
+  padding: 1rem !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .main-wrapper {
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  
+  .markdown h1 {
+    font-size: 2rem !important;
+  }
+  
+  .markdown h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Sidebar enhancements */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+.theme-doc-sidebar-menu {
+  padding: 1rem !important;
+}
+
+/* Enhanced footer */
+.footer {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%) !important;
+}
+
+/* Smooth animations */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+}
