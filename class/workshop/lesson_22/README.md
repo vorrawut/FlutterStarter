@@ -113,8 +113,8 @@ ConnectPro Ultimate Testing Framework
 ### **Advanced Testing Features**
 
 #### **🧪 Unit Testing Excellence**
-- **Comprehensive Coverage** - >90% code coverage with meaningful validation of business logic, edge cases, and error scenarios
-- **Performance Optimization** - Fast execution (<1ms per test) with efficient mocking and isolated test environments
+- **Comprehensive Coverage** - Greater than 90% code coverage with meaningful validation of business logic, edge cases, and error scenarios
+- **Performance Optimization** - Fast execution (less than 1ms per test) with efficient mocking and isolated test environments
 - **Real-World Scenarios** - Testing with production-like data including Unicode, large datasets, and edge conditions
 - **Firebase Mocking** - Professional mocking of Firestore, Auth, FCM, and Storage services for isolated testing
 
@@ -262,8 +262,8 @@ flutter test test/widget/chat/
 ## 📊 **Success Metrics & Assessment**
 
 ### **Testing Quality Standards** ✅
-- [ ] **Code Coverage** - >90% overall coverage with 100% critical path coverage
-- [ ] **Test Performance** - Unit tests execute in <1ms, full suite in <30 seconds
+- [ ] **Code Coverage** - Greater than 90% overall coverage with 100% critical path coverage
+- [ ] **Test Performance** - Unit tests execute in less than 1ms, full suite in less than 30 seconds
 - [ ] **Test Reliability** - All tests pass consistently with no flaky tests
 - [ ] **Comprehensive Validation** - Edge cases, error scenarios, and performance testing included
 - [ ] **Documentation Quality** - Tests serve as clear documentation of system behavior

@@ -654,8 +654,8 @@ flowchart TD
 ## **Testing Best Practices and Professional Standards**
 
 ### **🧪 Unit Testing Excellence**
-- **Comprehensive Coverage**: >90% code coverage with meaningful tests that validate business logic, edge cases, and error scenarios
-- **Fast Execution**: Unit tests run in <1ms each, enabling rapid feedback during development cycles
+- **Comprehensive Coverage**: Greater than 90% code coverage with meaningful tests that validate business logic, edge cases, and error scenarios
+- **Fast Execution**: Unit tests run in less than 1ms each, enabling rapid feedback during development cycles
 - **Isolated Testing**: Each test is independent with proper mocking of external dependencies and services
 - **Clear Documentation**: Tests serve as living documentation with descriptive names and clear assertions
 

@@ -411,7 +411,7 @@ flutter pub get
 
 **State not updating as expected with Bloc?**
 - Verify events are being added to Bloc correctly
-- Check event handlers are implemented and registered with on<Event>()
+- Check event handlers are implemented and registered with on&lt;Event&gt;()
 - Ensure states are immutable and properly implement Equatable
 - Use BlocObserver for debugging state changes and transitions
 

@@ -1,237 +1,138 @@
 /**
- * Flutter Starter - Custom Styles
- * Modern, clean design with excellent typography and code presentation
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
  */
 
-/* Flutter brand colors and modern variables */
+/* You can override the default Infima variables here. */
 :root {
-  /* Flutter brand colors */
-  --ifm-color-primary: #0175c2;
-  --ifm-color-primary-dark: #0066ad;
-  --ifm-color-primary-darker: #0061a4;
-  --ifm-color-primary-darkest: #005087;
-  --ifm-color-primary-light: #1f84d1;
-  --ifm-color-primary-lighter: #298ad5;
-  --ifm-color-primary-lightest: #4da3e0;
-  
-  /* Enhanced typography */
-  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
-  --ifm-code-font-size: 0.875rem;
-  --ifm-font-size-base: 16px;
-  --ifm-line-height-base: 1.7;
-  
-  /* Enhanced spacing */
-  --ifm-container-width-xl: 1400px;
-  --ifm-container-width: 1200px;
-  
-  /* Code highlighting */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
-  
-  /* Enhanced colors */
-  --ifm-color-success: #00c853;
-  --ifm-color-info: #0175c2;
-  --ifm-color-warning: #ff9800;
-  --ifm-color-danger: #f44336;
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode optimizations */
+/* For readability improvements */
 [data-theme='dark'] {
-  --ifm-color-primary: #40c4ff;
-  --ifm-color-primary-dark: #26b6ff;
-  --ifm-color-primary-darker: #1faeff;
-  --ifm-color-primary-darkest: #0096ff;
-  --ifm-color-primary-light: #5accff;
-  --ifm-color-primary-lighter: #66d2ff;
-  --ifm-color-primary-lightest: #8ae0ff;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced code blocks */
+/* Custom styles for Kafka curriculum */
+.hero__title {
+  font-weight: 800;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Make code blocks more readable */
 .prism-code {
-  border-radius: 12px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-  border: 1px solid var(--ifm-color-emphasis-200) !important;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-[data-theme='dark'] .prism-code {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid var(--ifm-color-emphasis-200) !important;
+/* Improve Mermaid diagram spacing */
+.mermaid {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-/* Code block enhancements */
-.theme-code-block {
-  margin: 1.5rem 0 !important;
+/* Custom styling for lesson cards */
+.lesson-card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-.theme-code-block .prism-code {
-  padding: 1.25rem !important;
+.lesson-card h3 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
 }
 
-/* Copy button styling */
-.clean-btn {
-  border-radius: 8px !important;
-  transition: all 0.2s ease !important;
+/* Improve table styling */
+table {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-.clean-btn:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
-/* Enhanced content container */
-.main-wrapper {
-  max-width: var(--ifm-container-width-xl) !important;
-  margin: 0 auto !important;
+th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
 }
 
-/* Improved headings */
-.markdown h1 {
-  font-size: 2.5rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 1.5rem !important;
-  color: var(--ifm-color-primary) !important;
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-in-progress {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-pending {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Improve admonition styling */
+.admonition {
+  margin-bottom: 2rem;
+}
+
+/* Better spacing for content */
 .markdown h2 {
-  font-size: 2rem !important;
-  font-weight: 600 !important;
-  margin-top: 2.5rem !important;
-  margin-bottom: 1rem !important;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200) !important;
-  padding-bottom: 0.5rem !important;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .markdown h3 {
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.75rem !important;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Enhanced tables */
-table {
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-  margin: 1.5rem 0 !important;
+/* Custom styling for phase headers */
+.phase-header {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
 }
 
-/* Admonitions styling */
-.alert {
-  border-radius: 12px !important;
-  border-left: 4px solid var(--ifm-alert-border-color) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-  margin: 1.5rem 0 !important;
-}
-
-/* Enhanced navbar */
-.navbar {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(20px) !important;
-}
-
-/* Mermaid diagram enhancements */
-.mermaid {
-  text-align: center !important;
-  margin: 2rem 0 !important;
-}
-
-.mermaid svg {
-  max-width: 100% !important;
-  height: auto !important;
-  border-radius: 8px !important;
-  background: var(--ifm-color-emphasis-100) !important;
-  padding: 1rem !important;
-}
-
-/* Responsive improvements */
-@media (max-width: 768px) {
-  .main-wrapper {
-    max-width: 100% !important;
-    padding: 0 1rem !important;
-  }
-  
-  .markdown h1 {
-    font-size: 2rem !important;
-  }
-  
-  .markdown h2 {
-    font-size: 1.75rem !important;
-  }
-}
-
-/* ---------- ULTRA-SIMPLE SIDEBAR FIXES ---------- */
-
-/* Basic sidebar container */
-.theme-doc-sidebar-container {
-  width: 300px;
-}
-
-/* Sidebar scrolling area */
-.theme-doc-sidebar-menu {
-  height: calc(100vh - var(--ifm-navbar-height, 60px) - 1rem);
-  overflow-y: auto;
-  padding: 1rem 0;
-  scroll-behavior: smooth;
-}
-
-/* Menu indentation - keep it simple */
-.menu__list .menu__list {
-  margin-left: 1rem;
-}
-
-/* Active link styling */
-.menu__link--active {
-  font-weight: 600 !important;
-  color: var(--ifm-color-primary) !important;
-  background-color: var(--ifm-menu-color-background-active) !important;
-}
-
-/* Menu item spacing */
-.menu__list-item {
-  margin: 4px 0;
-}
-
-/* Menu link styling */
-.menu__link {
-  border-radius: 6px;
-  padding: 8px 12px;
-  transition: all 0.2s ease;
-}
-
-.menu__link:hover {
-  background-color: var(--ifm-menu-color-background-hover);
-}
-
-/* Caret styling */
-.menu__caret {
-  transition: transform 0.2s ease;
-}
-
-/* Category items */
-.theme-doc-sidebar-item-category {
-  margin: 8px 0;
-}
-
-/* Collapsible menu behavior */
-.menu__list-item--collapsed .menu__list {
-  display: none;
-}
-
-/* Fix sidebar on mobile */
-@media (max-width: 996px) {
-  .theme-doc-sidebar-container {
-    width: 100%;
-  }
-}
-
-/* Enhanced footer */
-.footer {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%) !important;
-}
-
-/* Smooth animations */
-* {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+.phase-header h2 {
+  margin: 0;
+  color: white;
 }
