@@ -87,7 +87,7 @@ The site automatically deploys to GitHub Pages when you push to the main branch.
    ```
 
 4. **Access your site**:
-   - URL: `https://YOUR-USERNAME.github.io/flutter_starter/`
+   - URL: `https://YOUR-USERNAME.github.io/FlutterStarter/`
    - Usually available within 5-10 minutes
 
 ## 📚 Course Content
@@ -192,7 +192,7 @@ This project is designed for educational purposes. Please respect the learning m
 
 ## 🌟 Ready to Start Learning?
 
-**Live Site**: `https://YOUR-USERNAME.github.io/flutter_starter/`
+**Live Site**: `https://YOUR-USERNAME.github.io/FlutterStarter/`
 
 **Local Development**:
 ```bash

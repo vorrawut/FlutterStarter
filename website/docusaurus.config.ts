@@ -18,12 +18,12 @@ const config: Config = {
   url: 'https://your-github-username.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/flutter_starter/',
+  baseUrl: '/FlutterStarter/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'your-github-username', // Usually your GitHub org/user name.
-  projectName: 'flutter_starter', // Usually your repo name.
+  projectName: 'FlutterStarter', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
