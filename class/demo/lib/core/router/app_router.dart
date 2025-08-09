@@ -36,6 +36,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   final isAuthenticated = ref.watch(authStateProvider);
   final hasCompletedOnboarding = ref.watch(onboardingStateProvider);
   
+  print('Router: isAuthenticated=$isAuthenticated, hasCompletedOnboarding=$hasCompletedOnboarding');
+  
   return GoRouter(
     // Global navigation configuration
     initialLocation: AppRoutes.splash,
@@ -43,27 +45,30 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     
     // Route redirect logic
     redirect: (context, state) {
-      final location = state.fullPath;
+      final location = state.matchedLocation;
       
       // Skip redirect for splash screen
       if (location == AppRoutes.splash) return null;
       
-      // Handle onboarding flow
-      if (!hasCompletedOnboarding && location != AppRoutes.onboarding) {
+      // Handle onboarding flow first (highest priority)
+      if (!hasCompletedOnboarding) {
+        // Allow onboarding page
+        if (location == AppRoutes.onboarding) return null;
+        // Redirect everything else to onboarding
         return AppRoutes.onboarding;
       }
       
-      // Handle authentication flow
+      // Handle authentication flow (after onboarding is complete)
       if (!isAuthenticated) {
         // Allow access to auth pages
-        if (location?.startsWith('/auth') == true) return null;
+        if (location.startsWith('/auth')) return null;
         
         // Redirect to login for protected routes
-        return '${AppRoutes.login}?redirect=$location';
+        return AppRoutes.login;
       }
       
       // Redirect authenticated users away from auth pages
-      if (isAuthenticated && location?.startsWith('/auth') == true) {
+      if (isAuthenticated && location.startsWith('/auth')) {
         return AppRoutes.home;
       }
       

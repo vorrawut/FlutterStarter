@@ -34,8 +34,13 @@ void main() async {
   ]);
   
   // Initialize local storage
-  await Hive.initFlutter();
-  await StorageService.initialize();
+  try {
+    await Hive.initFlutter();
+    await StorageService.initialize();
+  } catch (e) {
+    debugPrint('Storage initialization error: $e');
+    // Continue without storage for now
+  }
   
   // Initialize Firebase - Temporarily disabled for demo
   // await Firebase.initializeApp(

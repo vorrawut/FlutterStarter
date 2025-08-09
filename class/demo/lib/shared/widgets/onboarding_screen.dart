@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../core/constants/app_constants.dart';
 import '../../core/router/app_router.dart';
@@ -38,7 +37,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
           'Connect with fellow learners, share knowledge, and grow together in your Flutter journey.',
       icon: Icons.waving_hand,
       color: Color(0xFF6366F1),
-      lottieAsset: 'assets/animations/welcome.json',
+      lottieAsset: null, // Using icon instead
     ),
     const OnboardingPage(
       title: 'Join Study Groups',
@@ -46,7 +45,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
           'Collaborate with peers, participate in discussions, and learn from experienced developers.',
       icon: Icons.groups,
       color: Color(0xFF8B5CF6),
-      lottieAsset: 'assets/animations/groups.json',
+      lottieAsset: null, // Using icon instead
     ),
     const OnboardingPage(
       title: 'Take Interactive Quizzes',
@@ -54,7 +53,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
           'Test your knowledge, track your progress, and earn achievements as you master Flutter.',
       icon: Icons.quiz,
       color: Color(0xFF06B6D4),
-      lottieAsset: 'assets/animations/quiz.json',
+      lottieAsset: null, // Using icon instead
     ),
     const OnboardingPage(
       title: 'Chat in Real-time',
@@ -62,7 +61,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
           'Get instant help, share code snippets, and build lasting connections with the community.',
       icon: Icons.chat_bubble,
       color: Color(0xFF10B981),
-      lottieAsset: 'assets/animations/chat.json',
+      lottieAsset: null, // Using icon instead
     ),
     const OnboardingPage(
       title: 'Track Your Progress',
@@ -70,7 +69,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
           'Monitor your learning journey, celebrate milestones, and unlock new achievement levels.',
       icon: Icons.trending_up,
       color: Color(0xFFF59E0B),
-      lottieAsset: 'assets/animations/progress.json',
+      lottieAsset: null, // Using icon instead
     ),
   ];
 
@@ -332,38 +331,31 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
   }
 
   Widget _buildAnimatedIllustration(OnboardingPage page) {
-    // Try to load Lottie animation, fallback to icon
-    return Lottie.asset(
-      page.lottieAsset,
-      fit: BoxFit.contain,
-      errorBuilder: (context, error, stackTrace) {
-        // Fallback to animated icon
-        return TweenAnimationBuilder<double>(
-          duration: const Duration(seconds: 2),
-          tween: Tween(begin: 0.8, end: 1.0),
-          curve: Curves.elasticOut,
-          builder: (context, scale, child) {
-            return Transform.scale(
-              scale: scale,
-              child: Container(
-                width: 120,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: page.color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: page.color.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                ),
-                child: Icon(
-                  page.icon,
-                  size: 60,
-                  color: page.color,
-                ),
+    // Use animated icon since Lottie assets are not available in demo
+    return TweenAnimationBuilder<double>(
+      duration: const Duration(seconds: 2),
+      tween: Tween(begin: 0.8, end: 1.0),
+      curve: Curves.elasticOut,
+      builder: (context, scale, child) {
+        return Transform.scale(
+          scale: scale,
+          child: Container(
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(
+              color: page.color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(
+                color: page.color.withValues(alpha: 0.3),
+                width: 2,
               ),
-            );
-          },
+            ),
+            child: Icon(
+              page.icon,
+              size: 60,
+              color: page.color,
+            ),
+          ),
         );
       },
     );
@@ -383,14 +375,14 @@ class OnboardingPage {
     required this.description,
     required this.icon,
     required this.color,
-    required this.lottieAsset,
+    this.lottieAsset,
   });
 
   final String title;
   final String description;
   final IconData icon;
   final Color color;
-  final String lottieAsset;
+  final String? lottieAsset;
 
   @override
   bool operator ==(Object other) {
