@@ -164,5 +164,3 @@ class ThemeModeNotifier extends StateNotifier<ThemeMode> {
     setThemeMode(newMode);
   }
 }
-
-
