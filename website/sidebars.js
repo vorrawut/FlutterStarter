@@ -298,6 +298,23 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: '🟣 Workshop',
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: 'Pokedex',
+          items: [
+           'modules/workshop/pokedexSplash',
+           'modules/workshop/pokedexLogin',
+           'modules/workshop/pokedexList',
+           'modules/workshop/pokedexDetail',
+          ],
+        },
+      ],
+    },
   ],
 };
 
