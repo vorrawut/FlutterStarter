@@ -26,8 +26,6 @@ const sidebars = {
           label: '🚀 Lesson 01: Introduction to Flutter',
           items: [
             'modules/lesson_01/concept',
-            'modules/lesson_01/workshop_01',
-            'modules/lesson_01/diagram',
           ],
         },
         {
