@@ -1,0 +1,158 @@
+# Pokédex List Workshop
+
+## Overview
+In this workshop you build a practical Pokémon list screen that pulls the first 151 Pokémon from the public PokéAPI and renders each name alongside its sprite.
+
+## Learning Objectives
+- Practice wiring the `http` package into a Flutter project.
+- Decode JSON payloads into lightweight Dart objects.
+- Use `FutureBuilder` and `ListView.builder` to render asynchronous data safely.
+- Derive additional fields (sprite URLs) from API data.
+
+## Prerequisites
+- Flutter SDK installed and working `flutter run` setup.
+- A starter app scaffold (for example this module's FlutterStarter repo).
+- Network access to `https://pokeapi.co`.
+
+## 1. Inspect the API
+The PokéAPI endpoint you will use is `https://pokeapi.co/api/v2/pokemon?limit=151`. A sample response contains the array you need in the `results` field:
+
+```json
+{
+  "count": 1302,
+  "next": "https://pokeapi.co/api/v2/pokemon?offset=3&limit=3",
+  "previous": null,
+  "results": [
+    { "name": "bulbasaur", "url": "https://pokeapi.co/api/v2/pokemon/1/" }
+  ]
+}
+```
+
+Each Pokémon only provides a name and a detail URL. The sprite image can be built from the Pokémon id: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<id>.png`.
+
+## 2. Add Dependencies
+Open `pubspec.yaml` and add the `http` package (or confirm it is already listed):
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+```
+
+Run `flutter pub get` once the dependency is added.
+
+## 3. Create the Screen
+Create `lib/pokemon_list_screen.dart` and scaffold a stateful widget. Use the following implementation as a starting point:
+
+```dart
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+class PokemonListScreen extends StatefulWidget {
+  const PokemonListScreen({super.key});
+
+  @override
+  State<PokemonListScreen> createState() => _PokemonListScreenState();
+}
+
+class _PokemonListScreenState extends State<PokemonListScreen> {
+  late Future<List<_Pokemon>> _pokemonFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _pokemonFuture = _fetchPokemon();
+  }
+
+  Future<List<_Pokemon>> _fetchPokemon() async {
+    final uri = Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151');
+    final res = await http.get(uri);
+    if (res.statusCode != 200) throw Exception('Failed to load Pokémon');
+
+    final body = jsonDecode(res.body) as Map<String, dynamic>;
+    final results = body['results'] as List<dynamic>;
+
+    return results.map((entry) {
+      final name = entry['name'] as String;
+      final url = entry['url'] as String;
+      final id = int.parse(url.split('/').where((segment) => segment.isNotEmpty).last);
+      return _Pokemon(
+        name: name,
+        imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png',
+      );
+    }).toList(growable: false);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Pokédex')),
+      body: FutureBuilder<List<_Pokemon>>(
+        future: _pokemonFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+          final pokemon = snapshot.data!;
+          return ListView.builder(
+            itemCount: pokemon.length,
+            itemBuilder: (context, index) {
+              final poke = pokemon[index];
+              return ListTile(
+                leading: Image.network(poke.imageUrl, width: 56, height: 56, fit: BoxFit.cover),
+                title: Text(poke.name),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _Pokemon {
+  const _Pokemon({required this.name, required this.imageUrl});
+
+  final String name;
+  final String imageUrl;
+}
+```
+
+## 4. Wire the Screen Into the App
+In your `MaterialApp`, set the home (or a named route) to `PokemonListScreen` and run the app:
+
+```dart
+return MaterialApp(
+  title: 'Pokédex',
+  theme: ThemeData(useMaterial3: true),
+  home: const PokemonListScreen(),
+);
+```
+
+## 5. Validate and Polish
+- Confirm the list shows 151 entries with sprites.
+- Add loading and error states that feel appropriate for your app design.
+- Consider caching using `CachedNetworkImage` or similar for smoother scrolling.
+
+## Stretch Ideas
+- Navigate to a detail page using the Pokémon id extracted from the URL.
+- Support pull-to-refresh with `RefreshIndicator`.
+- Add search or filtering across the loaded list.
+- Add tests that mock `http.Client` to validate JSON parsing logic.
+
+## DartPad Embed
+If you want to demo the screen on the web, drop this iframe into any HTML page. It loads the Flutter web build directly from DartPad with the list implementation preloaded.
+
+```html
+<iframe
+  src="https://dartpad.dev/embed-flutter.html?null_safety=true&split=80&run=true&code=import%20%27dart%3Aconvert%27%3B%0Aimport%20%27package%3Aflutter/material.dart%27%3B%0Aimport%20%27package%3Ahttp/http.dart%27%20as%20http%3B%0A%0Avoid%20main%28%29%20%3D%3E%20runApp%28const%20MyApp%28%29%29%3B%0A%0Aclass%20MyApp%20extends%20StatelessWidget%20%7B%0A%20%20const%20MyApp%28%7Bsuper.key%7D%29%3B%0A%0A%20%20%40override%0A%20%20Widget%20build%28BuildContext%20context%29%20%7B%0A%20%20%20%20return%20const%20MaterialApp%28%0A%20%20%20%20%20%20debugShowCheckedModeBanner%3A%20false%2C%0A%20%20%20%20%20%20home%3A%20PokemonListScreen%28%29%2C%0A%20%20%20%20%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20PokemonListScreen%20extends%20StatefulWidget%20%7B%0A%20%20const%20PokemonListScreen%28%7Bsuper.key%7D%29%3B%0A%0A%20%20%40override%0A%20%20State%3CPokemonListScreen%3E%20createState%28%29%20%3D%3E%20_PokemonListScreenState%28%29%3B%0A%7D%0A%0Aclass%20_PokemonListScreenState%20extends%20State%3CPokemonListScreen%3E%20%7B%0A%20%20late%20Future%3CList%3C_Pokemon%3E%3E%20_pokemonFuture%3B%0A%0A%20%20%40override%0A%20%20void%20initState%28%29%20%7B%0A%20%20%20%20super.initState%28%29%3B%0A%20%20%20%20_pokemonFuture%20%3D%20_fetchPokemon%28%29%3B%0A%20%20%7D%0A%0A%20%20Future%3CList%3C_Pokemon%3E%3E%20_fetchPokemon%28%29%20async%20%7B%0A%20%20%20%20final%20uri%20%3D%20Uri.parse%28%27https%3A//pokeapi.co/api/v2/pokemon%3Flimit%3D151%27%29%3B%0A%20%20%20%20final%20res%20%3D%20await%20http.get%28uri%29%3B%0A%20%20%20%20if%20%28res.statusCode%20%21%3D%20200%29%20throw%20Exception%28%27Failed%20to%20load%20Pok%C3%A9mon%27%29%3B%0A%0A%20%20%20%20final%20body%20%3D%20jsonDecode%28res.body%29%20as%20Map%3CString%2C%20dynamic%3E%3B%0A%20%20%20%20final%20results%20%3D%20body%5B%27results%27%5D%20as%20List%3Cdynamic%3E%3B%0A%0A%20%20%20%20return%20results.map%28%28entry%29%20%7B%0A%20%20%20%20%20%20final%20name%20%3D%20entry%5B%27name%27%5D%20as%20String%3B%0A%20%20%20%20%20%20final%20url%20%3D%20entry%5B%27url%27%5D%20as%20String%3B%0A%20%20%20%20%20%20final%20id%20%3D%20int.parse%28url.split%28%27/%27%29.where%28%28segment%29%20%3D%3E%20segment.isNotEmpty%29.last%29%3B%0A%20%20%20%20%20%20return%20_Pokemon%28%0A%20%20%20%20%20%20%20%20name%3A%20name%2C%0A%20%20%20%20%20%20%20%20imageUrl%3A%20%27https%3A//raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%24id.png%27%2C%0A%20%20%20%20%20%20%29%3B%0A%20%20%20%20%7D%29.toList%28growable%3A%20false%29%3B%0A%20%20%7D%0A%0A%20%20%40override%0A%20%20Widget%20build%28BuildContext%20context%29%20%7B%0A%20%20%20%20return%20Scaffold%28%0A%20%20%20%20%20%20appBar%3A%20AppBar%28title%3A%20const%20Text%28%27Pok%C3%A9dex%27%29%29%2C%0A%20%20%20%20%20%20body%3A%20FutureBuilder%3CList%3C_Pokemon%3E%3E%28%0A%20%20%20%20%20%20%20%20future%3A%20_pokemonFuture%2C%0A%20%20%20%20%20%20%20%20builder%3A%20%28context%2C%20snapshot%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20if%20%28snapshot.connectionState%20%3D%3D%20ConnectionState.waiting%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20const%20Center%28child%3A%20CircularProgressIndicator%28%29%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20if%20%28snapshot.hasError%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20Center%28child%3A%20Text%28%27Error%3A%20%24%7Bsnapshot.error%7D%27%29%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20final%20pokemon%20%3D%20snapshot.data%21%3B%0A%20%20%20%20%20%20%20%20%20%20return%20ListView.builder%28%0A%20%20%20%20%20%20%20%20%20%20%20%20itemCount%3A%20pokemon.length%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20itemBuilder%3A%20%28context%2C%20index%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20final%20poke%20%3D%20pokemon%5Bindex%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20ListTile%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20leading%3A%20Image.network%28poke.imageUrl%2C%20width%3A%2056%2C%20height%3A%2056%2C%20fit%3A%20BoxFit.cover%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3A%20Text%28poke.name%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20_Pokemon%20%7B%0A%20%20const%20_Pokemon%28%7Brequired%20this.name%2C%20required%20this.imageUrl%7D%29%3B%0A%0A%20%20final%20String%20name%3B%0A%20%20final%20String%20imageUrl%3B%0A%7D%0A"
+  style="width: 100%; height: 600px; border: 1px solid #ccc; border-radius: 12px; overflow: hidden;"
+  title="Pokédex List on DartPad"
+  loading="lazy"
+></iframe>
+```
