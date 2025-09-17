@@ -59,8 +59,6 @@ const sidebars = {
           type: 'category',
           label: '🎨 Lesson 05: Layouts & UI Composition',
           items: [
-            'modules/lesson_05/concept',
-            'modules/lesson_05/workshop_05',
             'modules/lesson_05/diagram',
           ],
         },
