@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/routes.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({super.key});

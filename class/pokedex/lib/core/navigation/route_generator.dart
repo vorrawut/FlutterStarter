@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/core/constants/routes.dart';
-import 'package:pokedex/features/list/splash_screen.dart';
+import 'package:pokedex/features/list/list_screen.dart';
 import 'package:pokedex/features/login/login_screen.dart';
 import 'package:pokedex/features/splash/splash_screen.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/routes.dart';
+import 'package:pokedex/core/constants/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
