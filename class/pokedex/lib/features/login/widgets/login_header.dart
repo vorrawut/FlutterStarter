@@ -9,10 +9,8 @@ class LoginHeader extends StatelessWidget {
       children: [
         const SizedBox(height: 20),
         _buildTitle(),
-
         const SizedBox(height: 30),
-        _buildLottieAnimation(),
-
+        _buildImage(),
         const SizedBox(height: 40),
       ],
     );
@@ -42,7 +40,7 @@ class LoginHeader extends StatelessWidget {
     );
   }
 
-  Widget _buildLottieAnimation() {
+  Widget _buildImage() {
     return SizedBox(
       height: 200,
       child: Center(

@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  late final _confirmPasswordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   bool _isLoginMode = true;
 

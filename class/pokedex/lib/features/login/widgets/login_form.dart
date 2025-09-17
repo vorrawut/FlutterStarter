@@ -40,7 +40,6 @@ class _LoginFormState extends State<LoginForm> {
       padding: const EdgeInsets.all(24),
       child: Column(
         children: [
-          // Mode Title
           Text(
             widget.isLoginMode ? 'Login' : 'Sign Up',
             style: const TextStyle(
@@ -49,10 +48,7 @@ class _LoginFormState extends State<LoginForm> {
               color: Color(0xFFFFC107),
             ),
           ),
-
           const SizedBox(height: 24),
-
-          // Form based on mode
           if (widget.isLoginMode) _buildLoginForm() else _buildSignUpForm(),
         ],
       ),
