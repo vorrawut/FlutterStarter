@@ -74,8 +74,6 @@ const sidebars = {
           label: '🧭 Lesson 06: Navigation & Routing',
           items: [
             'modules/lesson_06/concept',
-            'modules/lesson_06/workshop_06',
-            'modules/lesson_06/diagram',
           ],
         },
         {
