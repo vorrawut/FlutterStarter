@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/core/constants/routes.dart';
 import 'package:pokedex/features/login/widgets/login_header.dart';
 import 'package:pokedex/features/login/widgets/login_form.dart';
 import 'package:pokedex/features/login/widgets/login_bottom.dart';
@@ -96,6 +97,7 @@ class _LoginScreenState extends State<LoginScreen>
         behavior: SnackBarBehavior.floating,
       ),
     );
+    Navigator.pushReplacementNamed(context, Routes.pokemonList);
   }
 
   void _handleSignUpSuccess(String email) {

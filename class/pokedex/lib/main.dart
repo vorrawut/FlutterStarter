@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/login/login.dart';
+import 'core/constants/routes.dart';
+import 'core/navigation/route_generator.dart';
 
 void main() {
   runApp(const PokedexApp());
@@ -12,18 +13,16 @@ class PokedexApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pokedex',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // Pokemon-themed color scheme
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFFFFC107), // Pokemon yellow
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
-        // Custom font for Pokemon feel
         fontFamily: 'Inter',
       ),
-      home: const LoginScreen(),
+      initialRoute: Routes.splash,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
