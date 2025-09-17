@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pokedex/core/constants/routes.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _navigateToLogin() async {
-    await Future.delayed(const Duration(milliseconds: 2500));
+    await Future.delayed(const Duration(milliseconds: 3000));
     if (mounted) {
       Navigator.pushReplacementNamed(context, Routes.login);
     }
@@ -29,6 +30,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.green);
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF1A1B2E), Color(0xFF16213E), Color(0xFF0F3460)],
+          ),
+        ),
+        child: SafeArea(
+          child: Center(
+            child: SizedBox(
+              height: 150,
+              width: 150,
+              child: Lottie.asset('assets/pokeball_animation.json'),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
