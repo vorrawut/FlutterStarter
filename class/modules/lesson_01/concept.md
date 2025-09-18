@@ -1,7 +1,5 @@
 # 🚀 Flutter Introduction - Your Gateway to Cross-Platform Development
 
-## 🎯 **What You'll Master Today**
-
 By the end of this lesson, you'll understand:
 1. **🌟 What Flutter is** and why it's a game-changer
 2. **⚡ Hot Reload magic** that transforms development
@@ -39,10 +37,10 @@ By the end of this lesson, you'll understand:
 Flutter is **Google's open-source UI toolkit** that lets you build beautiful, natively compiled applications for multiple platforms from a **single codebase**.
 
 ### Core Philosophy:
-✨ **Everything is a Widget**  
-🔄 **Composition over Inheritance**  
-⚡ **Reactive Programming**  
-🎯 **Single Codebase, Multiple Platforms**
+- ✨ **Everything is a Widget**  
+- 🔄 **Composition over Inheritance**  
+- ⚡ **Reactive Programming**  
+- 🎯 **Single Codebase, Multiple Platforms**
 ---
 
 ## 3. 🚀 **Why Flutter Rocks - Key Superpowers**
