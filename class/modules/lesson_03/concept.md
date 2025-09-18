@@ -15,6 +15,9 @@ By the end of this 30-minute lesson, you will understand:
 
 Dart is like learning the grammar rules (**syntax**) before writing a story. It's the **programming language** that powers Flutter apps!
 
+
+[![i'm a dart developer](https://preview.redd.it/xythf1yzyc471.png?width=320&crop=smart&auto=webp&s=9a9478979c44bcae69f29510544cf8edc24044ee "You just insulted my entire race of people.")](https://www.reddit.com/r/ProgrammerHumor/comments/nwe1ij/theres_not_much_more_to_dart_than_flutter/)
+
 ### **🧑‍💻 Easy to Read Syntax**
 
 ```dart
