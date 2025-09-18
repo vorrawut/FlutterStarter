@@ -33,7 +33,7 @@ const sidebars = {
           label: '🛠️ Lesson 02: Development Environment Setup',
           items: [
             'modules/lesson_02/concept',
-            'modules/lesson_02/workshop_02',
+            // 'modules/lesson_02/workshop_02',
             'modules/lesson_02/diagram',
           ],
         },
@@ -112,7 +112,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: '🔄 Lesson 10: setState & Stateful Widgets',
+          label: '🎯 Lesson 10: setState & Stateful Widgets',
           items: [
             'modules/lesson_10/concept',
             // 'modules/lesson_10/workshop_10',
@@ -122,7 +122,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '🗃️ Lesson 11: Provider Pattern',
+          label: '🎯 Lesson 11: Provider Pattern',
           items: [
             'modules/lesson_11/concept',
             // 'modules/lesson_11/workshop_11',
@@ -132,7 +132,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '🏗️ Lesson 12: Bloc Pattern',
+          label: '🎯 Lesson 12: Bloc Pattern',
           items: [
             'modules/lesson_12/concept',
             // 'modules/lesson_12/workshop_12',
@@ -142,7 +142,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '⚡ Lesson 13: Riverpod',
+          label: '🎯 Lesson 13: Riverpod',
           items: [
             'modules/lesson_13/concept',
             // 'modules/lesson_13/workshop_13',
