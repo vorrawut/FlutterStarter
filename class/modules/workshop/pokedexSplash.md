@@ -1,6 +1,7 @@
 # Pokedex Splash Screen
 
 ## 📋 What you'll learn
+
 In this workshop, you'll learn how to create splash screen by using image asset or animation. This workshop covers essential Flutter concepts including:
 
 - **Flutter App Build Lifecycle**
@@ -8,9 +9,10 @@ In this workshop, you'll learn how to create splash screen by using image asset 
 - **Setup time duration before navigate to other screen**
 
 ### 🎨 What We're Building
+
 An animated splash screen that shows a Lottie Pokéball and then navigates to the Login screen after a short delay.
 
-![Splash Screen](./images/splash/splash_screen.mp4){width=50%}
+<video src="./images/splash/splash_screen.mp4" width=50% controls></video>
 
 ### 🔄 Flutter App Build Lifecycle
 
@@ -23,7 +25,7 @@ This is the sequence from app launch until your splash completes:
                        │
                        ▼
         ┌───────────────────────────────┐
-        │   Native Launch (OS screen)   │ -> Load Native Splash Screen 
+        │   Native Launch (OS screen)   │ -> Load Native Splash Screen
         └──────────────┬──────────── ───┘
                        │
                        ▼
@@ -34,12 +36,12 @@ This is the sequence from app launch until your splash completes:
                        ▼
         ┌───────────────────────────────┐
         │   main.dart: runApp(...)      │ -> Build root widget and start widget tree
-        └──────────────┬─ ──────────────┘ 
+        └──────────────┬─ ──────────────┘
                        │
                        ▼
         ┌───────────────────────────────┐
-        │       First Frame Render      │ 
-        │          → SplashScreen       │ 
+        │       First Frame Render      │
+        │          → SplashScreen       │
         └──────────────┬────── ─────────┘
                        │
                        ▼
@@ -54,7 +56,9 @@ This is the sequence from app launch until your splash completes:
    │  Navigate: Login  │   │ Navigate: Home/List │
    └───────────────────┘   └─────────────────────┘
 ```
+
 ## Before you start
+
 - Flutter SDK installed and `flutter run` works on your machine.
 - This starter app (or any Flutter project where you can add a new screen).
 - Internet access to `https://pokeapi.co`.
@@ -69,6 +73,7 @@ If you are unsure, run `flutter --version` in a terminal. Seeing version informa
 Set the initial route to splash in your app root.
 
 File: `class/pokedex/lib/main.dart`
+
 ```dart
 class PokedexApp extends StatelessWidget {
   const PokedexApp({super.key});
@@ -97,6 +102,7 @@ class PokedexApp extends StatelessWidget {
 We use a StatefulWidget to start a delay (or async init) and then navigate.
 
 File: `class/pokedex/lib/features/splash/splash_screen.dart`
+
 ```dart
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -117,7 +123,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 ```
+
 Decorate the screen with gradient
+
 ```dart
 @override
   Widget build(BuildContext context) {
@@ -145,6 +153,7 @@ Decorate the screen with gradient
 In the Pokedex sample app, Lottie and assets are already configured:
 
 File: `class/pokedex/pubspec.yaml`
+
 ```yaml
 dependencies:
   lottie: ^3.3.2
@@ -153,6 +162,7 @@ flutter:
   assets:
     - assets/
 ```
+
 https://pub.dev/packages/lottie
 
 Place your animation file at `class/pokedex/assets/pokeball_animation.json`
@@ -182,6 +192,7 @@ Future<void> _navigateNext() async {
 ```
 
 Tips:
+
 - Replace the delay with real initialization (e.g., check auth token, load config, warm up services). Navigate to different routes based on results.
 - Keep `build` purely UI; trigger async work from `initState` via a separate method.
 
@@ -192,12 +203,13 @@ Tips:
 If you want an instant splash during engine startup, use `flutter_native_splash` in the Pokedex app:
 
 File: `class/pokedex/pubspec.yaml`
+
 ```yaml
 dev_dependencies:
   flutter_native_splash: ^2.4.1
 
 flutter_native_splash:
-  color: "#1A1B2E"          # Match your Flutter splash background
+  color: "#1A1B2E" # Match your Flutter splash background
   image: assets/pokeball.png # Optional centered image
   android_12:
     color: "#1A1B2E"
@@ -205,6 +217,7 @@ flutter_native_splash:
 ```
 
 Then run in the `class/pokedex` directory:
+
 ```bash
 flutter pub get
 dart run flutter_native_splash:create
@@ -215,6 +228,7 @@ Best practice: match the native splash background/image to your Flutter splash t
 ---
 
 ### 🧠 Quick recap
+
 - App launch → `main()` → `runApp()` → `MaterialApp(initialRoute: '/')` → navigates to `SplashScreen` via route generator
 - In `SplashScreen.initState()`, start initialization or a short delay (via a separate async method) while `build()` renders the splash animation/UI
 - When initialization completes → `Navigator.pushReplacementNamed(context, Routes.login)` to navigate and remove splash from back stack → `dispose()` runs
