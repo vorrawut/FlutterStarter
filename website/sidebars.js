@@ -42,8 +42,6 @@ const sidebars = {
           label: '📝 Lesson 03: Dart Fundamentals',
           items: [
             'modules/lesson_03/concept',
-            'modules/lesson_03/workshop_03',
-            'modules/lesson_03/diagram',
           ],
         },
         {
@@ -51,8 +49,6 @@ const sidebars = {
           label: '🧩 Lesson 04: Widgets 101',
           items: [
             'modules/lesson_04/concept',
-            'modules/lesson_04/workshop_04',
-            'modules/lesson_04/diagram',
           ],
         },
         {
