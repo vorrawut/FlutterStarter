@@ -17,7 +17,7 @@ An animated splash screen that shows a Lottie Pokéball and then navigates to th
     src={require('./images/splash/splash_screen.mp4').default}
     controls
     playsInline
-    style={{ width: '50%', borderRadius: 8 }}
+    style={{ width: '40%', borderRadius: 8 }}
   >
     Your browser does not support the video tag.
   </video>
