@@ -115,8 +115,8 @@ const sidebars = {
           label: '🔄 Lesson 10: setState & Stateful Widgets',
           items: [
             'modules/lesson_10/concept',
-            'modules/lesson_10/workshop_10',
-            'modules/lesson_10/workshop_10_part2',
+            // 'modules/lesson_10/workshop_10',
+            // 'modules/lesson_10/workshop_10_part2',
             'modules/lesson_10/diagram',
           ],
         },
@@ -125,8 +125,8 @@ const sidebars = {
           label: '🗃️ Lesson 11: Provider Pattern',
           items: [
             'modules/lesson_11/concept',
-            'modules/lesson_11/workshop_11',
-            'modules/lesson_11/workshop_11_part2',
+            // 'modules/lesson_11/workshop_11',
+            // 'modules/lesson_11/workshop_11_part2',
             'modules/lesson_11/diagram',
           ],
         },
@@ -135,8 +135,8 @@ const sidebars = {
           label: '🏗️ Lesson 12: Bloc Pattern',
           items: [
             'modules/lesson_12/concept',
-            'modules/lesson_12/workshop_12',
-            'modules/lesson_12/workshop_12_part2',
+            // 'modules/lesson_12/workshop_12',
+            // 'modules/lesson_12/workshop_12_part2',
             'modules/lesson_12/diagram',
           ],
         },
@@ -145,8 +145,8 @@ const sidebars = {
           label: '⚡ Lesson 13: Riverpod',
           items: [
             'modules/lesson_13/concept',
-            'modules/lesson_13/workshop_13',
-            'modules/lesson_13/workshop_13_part2',
+            // 'modules/lesson_13/workshop_13',
+            // 'modules/lesson_13/workshop_13_part2',
             'modules/lesson_13/diagram',
           ],
         },
@@ -155,7 +155,7 @@ const sidebars = {
           label: '🎯 Lesson 14: State Management Decision Framework',
           items: [
             'modules/lesson_14/concept',
-            'modules/lesson_14/workshop_14',
+            // 'modules/lesson_14/workshop_14',
           ],
         },
         {
@@ -163,7 +163,7 @@ const sidebars = {
           label: '🚀 Lesson 15: AuthFlow Pro - Hybrid Architecture',
           items: [
             'modules/lesson_15/concept',
-            'modules/lesson_15/workshop_15',
+            // 'modules/lesson_15/workshop_15',
             'modules/lesson_15/diagram',
           ],
         },
