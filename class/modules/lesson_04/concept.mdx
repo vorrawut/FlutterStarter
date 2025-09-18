@@ -1,3 +1,8 @@
+import { WidgetTree } from './components/WidgetTree';
+import { WidgetComposition } from './components/WidgetComposition';
+import { StatefulDemo } from './components/StatefulDemo';
+import { LayoutWidgets } from './components/LayoutWidgets';
+
 # 🎯 Concepts
 
 ## 🎯 Learning Objectives
@@ -13,8 +18,6 @@ By the end of this lesson, you will be able to:
 
 In Flutter, **everything is a widget**. Think of widgets like building blocks or LEGO pieces. Just like you build with LEGO blocks, you build apps with widgets.
 
-![Widget Building Blocks Concept](https://docs.flutter.dev/assets/images/docs/fwe/simple_composition_example.png)
-
 A widget is a piece of your app's screen. It could be:
 
 - Text on the screen
@@ -22,22 +25,10 @@ A widget is a piece of your app's screen. It could be:
 - A picture
 - The layout that arranges other pieces
 
-### Visual Example
-Imagine your phone screen like this:
+**Each element you see is a separate widget working together!**
 
-```
-┌─────────────────────────────┐
-│        App Bar              │ ← This is a widget
-├─────────────────────────────┤
-│                             │
-│    📱 "Hello World!"        │ ← This is a widget
-│                             │
-│      [  Click Me  ]         │ ← This is a widget
-│                             │
-│         ⭐ ⭐ ⭐             │ ← These are widgets
-│                             │
-└─────────────────────────────┘
-```
+![Widget Building Blocks Concept](https://docs.flutter.dev/assets/images/docs/fwe/simple_composition_example.png)
+
 
 ## Simple Example
 
@@ -79,43 +70,11 @@ Widgets are like a family tree. One widget can contain other widgets inside it.
 
 ### Widget Tree Visualization
 
-```
-MyApp
-└── MaterialApp
-    └── Scaffold
-        ├── AppBar
-        │   └── Text
-        └── Center
-            └── Text
-```
-
-### Russian Dolls Analogy
 Think of it like Russian dolls (matryoshka). Each doll contains smaller dolls inside.
 
-```
-🪆 MyApp
- └── 🪆 MaterialApp
-     └── 🪆 Scaffold
-         ├── 🪆 AppBar
-         │   └── 📝 Text
-         └── 🪆 Center
-             └── 📝 Text
-```
+<WidgetTree />
 
-### Real Screen Example
-Here's how the widget tree creates your actual screen:
-
-```
-┌─────────────────────────────┐  ← Scaffold (gives basic structure)
-│ My First App                │  ← AppBar with Text inside
-├─────────────────────────────┤
-│                             │
-│                             │
-│       Hello, World!         │  ← Center widget with Text inside
-│                             │
-│                             │
-└─────────────────────────────┘
-```
+**The widget tree shows how widgets nest inside each other to create your app!**
 
 ## Widget Composition
 
@@ -129,6 +88,8 @@ These arrange other widgets:
 - `Column` - Top to bottom ↓↓↓
 - `Padding` - Adds space around things
 
+<LayoutWidgets />
+
 #### 🔧 Utility Widgets
 These help with common tasks:
 - `Container` - Like a box that holds things
@@ -139,23 +100,13 @@ These show things on screen:
 - `Button` - Something to tap
 - `Image` - Shows pictures
 
-### Visual Example
+### Interactive Widget Building
 
-```
-🧱 Container (utility - creates a box)
- └── 🧱 Row (layout - arranges side by side)
-     ├── 👁️ Icon(star) ⭐
-     └── 👁️ Text("Rating: 5")
-```
+See how small widgets combine to create bigger UI elements:
 
-**Result on screen:**
-```
-┌────────────────────┐
-│  ⭐ Rating: 5      │
-└────────────────────┘
-```
+<WidgetComposition />
 
-**Code:**
+**Code for the final result:**
 ```dart
 Container(        // Utility widget
   padding: EdgeInsets.all(16),
@@ -194,18 +145,16 @@ This creates a text with space around it. Now you can use `PaddedText()` anywher
 
 There are two main types of widgets:
 
-### 1. StatelessWidget (Never Changes) 🖼️
+<StatefulDemo />
 
-These widgets never change. Like a picture on the wall - it stays the same.
+### Easy Way to Remember
 
-**Visual Example:**
-```
-┌─────────────────────┐
-│ Welcome to My App!  │ ← This text never changes
-└─────────────────────┘
-```
+**StatelessWidget** = 🖼️ Picture (never changes)
+**StatefulWidget** = 💡 Light switch (can change on/off)
 
-**Code:**
+**Code Examples:**
+
+**StatelessWidget:**
 ```dart
 class MyText extends StatelessWidget {
   @override
@@ -215,20 +164,7 @@ class MyText extends StatelessWidget {
 }
 ```
 
-### 2. StatefulWidget (Can Change) 💡
-
-These widgets can change. Like a light switch - it can be on or off.
-
-**Visual Example:**
-```
-Before tap:          After tap:
-┌─────────────┐     ┌─────────────┐
-│ Count: 0    │     │ Count: 1    │
-│ [ Add 1 ]   │ --> │ [ Add 1 ]   │
-└─────────────┘     └─────────────┘
-```
-
-**Code:**
+**StatefulWidget:**
 ```dart
 class MyCounter extends StatefulWidget {
   @override
@@ -256,11 +192,6 @@ class _MyCounterState extends State<MyCounter> {
   }
 }
 ```
-
-### Easy Way to Remember
-
-**StatelessWidget** = 🖼️ Picture (never changes)
-**StatefulWidget** = 💡 Light switch (can change on/off)
 
 ## Important Widgets to Know
 
