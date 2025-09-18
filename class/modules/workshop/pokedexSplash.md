@@ -10,6 +10,16 @@ In this workshop, you'll learn how to create splash screen by using image asset 
 ### 🎨 What We're Building
 An animated splash screen that shows a Lottie Pokéball and then navigates to the Login screen after a short delay.
 
+<p align="center">
+  <video src="images/splash/splash_screen.mp4"
+         controls
+         playsinline
+         style="width: 50%; border-radius: 8px;">
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+
 ### 🔄 Flutter App Build Lifecycle
 
 This is the sequence from app launch until your splash completes:
