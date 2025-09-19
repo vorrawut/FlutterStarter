@@ -1,9 +1,9 @@
 # Pokedex: Detail Screen Workshop
 Let's continue from List Screen
 
-## ** Step 1: Make item in list clickable** 
+## Step 1: Make item in list clickable
 
-1.1 looking for widget we want to enhance from ListScreen.dart
+#### 1.1 looking for widget we want to enhance from ListScreen.dart
 ```dart
 ListTile(
     leading: Image.network(poke.imageUrl,
@@ -14,13 +14,14 @@ ListTile(
 here it is
 
 
-1.2 add "onTap" to navigate to Detail screen with parameter ID**
 
+#### 1.2 add "onTap" to navigate to Detail screen with parameter ID**
 add new route in RouteGenerator
 ```dart
 case Routes.pokemonDetail:
     return _createRoute(DetailScreen(id: settings.arguments as int));
 ```
+
 
 add onTap to list items in ListScreen
 ```dart
@@ -36,9 +37,10 @@ ListTile(
 ```
 
 
-## ** Step 2: Create Pokemon Detail Page**
 
-2.1 create DetailScreen.dart and initial stateful widget
+## Step 2: Create Pokemon Detail Page
+
+#### 2.1 create DetailScreen.dart and initial stateful widget
 ```dart
 import 'package:flutter/material.dart';
 
@@ -67,7 +69,9 @@ class _DetailScreenState extends State<DetailScreen> {
 }
 ```
 
-2.2 receive ID from previous page
+
+
+#### 2.2 receive ID from previous page
 ```dart
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, required this.id});
@@ -78,14 +82,16 @@ class DetailScreen extends StatefulWidget {
 ```
 
 
-2.3 call pokemon API by received ID
 
-import libs
-    ```dart
-    import 'dart:convert';
-    import 'package:flutter/material.dart';
-    import 'package:http/http.dart' as http;
-    ```
+#### 2.3 call pokemon API by received ID
+add import libs
+```dart
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+```
+
+
 
 prepare model
 ```dart
@@ -104,6 +110,8 @@ class PokemonDetail {
 }
 ```
 
+
+
 fetch and map data
 ```dart
 Future<PokemonDetail> _fetchPokemonDetail() async {
@@ -121,7 +129,7 @@ Future<PokemonDetail> _fetchPokemonDetail() async {
 ```
 
 
-2.4 implement widgets
+#### 2.4 implement widgets
 ```dart
 @override
   Widget build(BuildContext context) {
@@ -154,7 +162,7 @@ Future<PokemonDetail> _fetchPokemonDetail() async {
 ---
 
 # Full Code
-## DetailScreen.dart
+### DetailScreen.dart
 ```dart
 import 'dart:convert';
 import 'package:flutter/material.dart';
