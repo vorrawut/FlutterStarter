@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/core/constants/routes.dart';
+import 'package:pokedex/features/detail/detail_screen.dart';
 import 'package:pokedex/features/list/list_screen.dart';
 import 'package:pokedex/features/login/login_screen.dart';
 import 'package:pokedex/features/splash/splash_screen.dart';
@@ -17,7 +18,7 @@ class RouteGenerator {
         return _createRoute(const ListScreen());
 
       case Routes.pokemonDetail:
-        return _createRoute(const LoginScreen());
+        return _createRoute(DetailScreen(id: settings.arguments as int));
 
       default:
         return _createRoute(LoginScreen());
