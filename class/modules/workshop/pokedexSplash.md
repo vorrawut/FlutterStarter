@@ -82,13 +82,71 @@ If you are unsure, run `flutter --version` in a terminal. Seeing version informa
 
 ---
 
-### **📁 Step 1: App entry and initial route**
+### **📁 Step 1a: Create route constants**
 
-Set the initial route to splash in your app root.
+First, let's define all the route paths in a constants file.
 
-File: `class/pokedex/lib/main.dart`
-
+**Create** `/lib/core/constants/routes.dart`
 ```dart
+class Routes {
+  static const String splash = '/';
+  static const String login = '/login';
+  static const String pokemonList = '/pokemon-list';
+  static const String pokemonDetail = '/pokemon-detail';
+
+  static List<String> get allRoutes => [
+    splash,
+    login,
+    pokemonList,
+    pokemonDetail,
+  ];
+}
+```
+
+### **📁 Step 1b: Create navigation route generator**
+
+Now create the route generator that will handle navigation between screens.
+
+**Create** `/lib/core/navigation/route_generator.dart`
+```dart
+import 'package:flutter/material.dart';
+import '../constants/routes.dart';
+import '../../features/splash/splash_screen.dart';
+
+class RouteGenerator {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case Routes.splash:
+        return _createRoute(const SplashScreen());
+
+      default:
+        return _createRoute(const SplashScreen());
+    }
+  }
+
+  static PageRouteBuilder _createRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionDuration: const Duration(milliseconds: 300),
+    );
+  }
+}
+```
+
+### **📁 Step 1c: Update main.dart to use routing**
+
+Now update your app entry point to use the routing system.
+
+**Update** `/lib/main.dart`
+```dart
+import 'package:flutter/material.dart';
+import 'core/constants/routes.dart';
+import 'core/navigation/route_generator.dart';
+
+void main() {
+  runApp(const PokedexApp());
+}
+
 class PokedexApp extends StatelessWidget {
   const PokedexApp({super.key});
 
@@ -111,13 +169,16 @@ class PokedexApp extends StatelessWidget {
 }
 ```
 
+
 ### **📁 Step 2: Create the SplashScreen widget**
 
 We use a StatefulWidget to start a delay (or async init) and then navigate.
 
-File: `class/pokedex/lib/features/splash/splash_screen.dart`
+**Create** `/lib/features/splash/splash_screen.dart`
 
 ```dart
+import 'package:flutter/material.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -133,33 +194,46 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Center(
+        child: Text('Splash screen'),
+      ),
+    );
   }
 }
 ```
 
-Decorate the screen with gradient
+Now let's add a beautiful gradient background to the splash screen:
+
+**Update** the `build` method in your `SplashScreen`:
 
 ```dart
 @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF1A1B2E), Color(0xFF16213E), Color(0xFF0F3460)],
-          ),
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFF1A1B2E), Color(0xFF16213E), Color(0xFF0F3460)],
         ),
-        child: SafeArea(
-          child: Center(
-            child: Text('Splash screen'),
+      ),
+      child: const SafeArea(
+        child: Center(
+          child: Text(
+            'Splash screen',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 ### **📁 Step 3: Ensure assets and packages are configured**
@@ -179,31 +253,146 @@ flutter:
 
 https://pub.dev/packages/lottie
 
-Place your animation file at `class/pokedex/assets/pokeball_animation.json`
+Place your animation file at `/assets/pokeball_animation.json`
+
+Now update your SplashScreen to use the Lottie animation. First, **add the import** at the top of your SplashScreen file:
 
 ```dart
-SizedBox(
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';  // Add this import
+```
+
+Then **replace the Text widget** in your build method with the Lottie animation:
+
+```dart
+child: Center(
+  child: SizedBox(
     child: Lottie.asset('assets/pokeball_animation.json'),
-)
+  ),
+),
 ```
 
-### **📁 Step 4: Navigate to the next screen**
+### **📁 Step 4a: Create the LoginScreen**
 
-Use `pushReplacementNamed` to move from splash to login without keeping splash in the back stack.
+Before we can navigate to the login screen, let's create it first.
+
+**Create** `/lib/features/login/login_screen.dart`
+```dart
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.green,
+      ),
+    );
+  }
+}
+```
+
+### **📁 Step 4b: Update route generator to handle login**
+
+Now update the route generator to include the login route.
+
+**Update** `/lib/core/navigation/route_generator.dart`
+```dart
+import 'package:flutter/material.dart';
+import '../constants/routes.dart';
+import '../../features/splash/splash_screen.dart';
+import '../../features/login/login_screen.dart';  // Add this import
+
+class RouteGenerator {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case Routes.splash:
+        return _createRoute(const SplashScreen());
+
+      case Routes.login:
+        return _createRoute(const LoginScreen());  // Add this case
+
+      default:
+        return _createRoute(const SplashScreen());
+    }
+  }
+
+  static PageRouteBuilder _createRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionDuration: const Duration(milliseconds: 300),
+    );
+  }
+}
+```
+
+### **📁 Step 4c: Add navigation from splash to login**
+
+Finally, add the navigation logic to your SplashScreen to move to the login screen after a delay.
+
+**Update** the `SplashScreen` in `/lib/features/splash/splash_screen.dart`:
 
 ```dart
-@override
-void initState() {
-    super.initState();
-    _navigateNext()
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import '../../core/constants/routes.dart';  // Add this import
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-Future<void> _navigateNext() async {
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _navigateNext();  // Add this call
+  }
+
+  Future<void> _navigateNext() async {
+    // Wait for 3 seconds to show the splash animation
     await Future.delayed(const Duration(milliseconds: 3000));
+    
+    // Check if the widget is still mounted before navigating
     if (!mounted) return;
+    
+    // Navigate to login screen and remove splash from back stack
     Navigator.pushReplacementNamed(context, Routes.login);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF1A1B2E), Color(0xFF16213E), Color(0xFF0F3460)],
+          ),
+        ),
+        child: SafeArea(
+          child: Center(
+            child: SizedBox(
+              child: Lottie.asset('assets/pokeball_animation.json'),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
+
 
 Tips:
 
@@ -216,7 +405,7 @@ Tips:
 
 If you want an instant splash during engine startup, use `flutter_native_splash` in the Pokedex app:
 
-File: `class/pokedex/pubspec.yaml`
+File: `pubspec.yaml`
 
 ```yaml
 dev_dependencies:
@@ -230,7 +419,7 @@ flutter_native_splash:
     image: assets/pokeball.png
 ```
 
-Then run in the `class/pokedex` directory:
+Then run in the main directory:
 
 ```bash
 flutter pub get
