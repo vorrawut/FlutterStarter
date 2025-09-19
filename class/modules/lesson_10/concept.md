@@ -106,7 +106,6 @@ Highlight the four methods beginners must memorize:
 Show the diagram first, then open the code snippet.
 
 ### [WIP] ตามหารูปมาใส่แทน
-![Stateful lifecycle journey](./assets/stateful_lifecycle.png)
 
 ```mermaid
 flowchart TD
