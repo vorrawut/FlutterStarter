@@ -8,6 +8,14 @@
 ## 📱 Responsive Design Breakpoints
 
 ### Screen Size Categories
+![what_is_responsive_web.png](images/what_is_responsive_web.png)
+
+![iphone_screen_resolution.jpg](images/iphone_screen_resolution.jpg)
+
+![foldable_1.webp](images/foldable_1.webp)
+
+![foldable_3.jpg](images/foldable_3.jpg)
+
 ```mermaid
 graph LR
     A[0px] --> B[576px<br/>Small/Mobile]
@@ -97,78 +105,3 @@ graph TD
     style E fill:#fff8e1
     style F fill:#fce4ec
 ```
-
-## 📊 Performance Optimization Flow
-
-### Widget Rebuild Optimization
-```mermaid
-graph TD
-    A[State Change] --> B{Widget Tree Analysis}
-    
-    B --> C[Identify Affected Widgets]
-    C --> D{Widget Type}
-    
-    D -->|StatelessWidget| E[Check if props changed]
-    D -->|StatefulWidget| F[Check if state changed]
-    D -->|const Widget| G[Skip rebuild ✅]
-    
-    E -->|Props same| H[Skip rebuild ✅]
-    E -->|Props changed| I[Rebuild required ⚠️]
-    
-    F -->|State same| J[Skip rebuild ✅]
-    F -->|State changed| K[Rebuild required ⚠️]
-    
-    I --> L[Rebuild Widget & Children]
-    K --> L
-    
-    L --> M[Layout & Paint]
-    M --> N[Display Update]
-    
-    style G fill:#c8e6c9
-    style H fill:#c8e6c9
-    style J fill:#c8e6c9
-    style I fill:#ffcdd2
-    style K fill:#ffcdd2
-    style L fill:#fff3e0
-```
-
-## 🎨 Example of Design System Architecture
-
-### Component Hierarchy
-```mermaid
-graph TD
-    A[Atomic Components] --> B[Text]
-    A --> C[Icon]
-    A --> D[Button]
-    A --> E[Input]
-    
-    F[Molecule Components] --> G[SearchBox]
-    F --> H[Card Header]
-    F --> I[Navigation Item]
-    
-    J[Organism Components] --> K[Navigation Bar]
-    J --> L[Product Grid]
-    J --> M[User Profile]
-    
-    N[Template Components] --> O[Dashboard Layout]
-    N --> P[Article Layout]
-    N --> Q[Settings Layout]
-    
-    B --> G
-    C --> G
-    E --> G
-    
-    G --> K
-    H --> L
-    I --> K
-    
-    K --> O
-    L --> O
-    M --> P
-    
-    style A fill:#e8f5e8
-    style F fill:#fff3e0
-    style J fill:#e3f2fd
-    style N fill:#fce4ec
-```
-
