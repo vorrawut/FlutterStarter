@@ -31,7 +31,7 @@ In this hands-on workshop, you'll learn how to create a beautiful, animated logi
 
 ### 💻 Code Implementation
 
-Create a new file: `login_screen.dart`
+update file: `/lib/features/login/login_screen.dart`
 ```dart
 import 'package:flutter/material.dart';
 
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 ### 💻 Step 2.1: Create the LoginHeader Widget
 
-Create a new file: `login_header.dart`
+Create a new file: `/lib/features/login/widgets/login_header.dart`
 
 **Why separate widgets?** Breaking UI into smaller widgets makes code easier to read, reuse, and maintain!
 ```dart
@@ -183,7 +183,7 @@ class LoginHeader extends StatelessWidget {
 
 Now let's import and use our new LoginHeader widget in the main screen.
 
-**Update your `login_screen.dart`:**
+**Update your `/lib/features/login/login_screen.dart`:**
 
 ```dart
 import 'package:flutter/material.dart';
@@ -241,7 +241,7 @@ Widget build(BuildContext context) {
 
 ### 💻 Step 3.1: Create the LoginForm Widget
 
-Create a new file: `login_form.dart`
+Create a new file: `/lib/features/login/widgets/login_form.dart`
 
 **Why this approach?** We're creating a flexible form that can handle both login and signup modes!
 ```dart
@@ -527,7 +527,7 @@ class _LoginFormState extends State<LoginForm> {
 
 Now let's add the form to our main screen and set up the controllers.
 
-**Update your `login_screen.dart`:**
+**Update your `/lib/features/login/login_screen.dart`:**
 
 ```dart
 import 'package:flutter/material.dart';
@@ -641,7 +641,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 ### 💻 Step 4.1: Create the LoginBottom Widget
 
-Create a new file: `login_bottom.dart`
+Create a new file: `/lib/features/login/widgets/login_bottom.dart`
 
 **Purpose:** This widget provides a clean way for users to switch between login and signup modes.
 ```dart
@@ -694,7 +694,7 @@ class LoginBottom extends StatelessWidget {
 
 Now let's add the toggle functionality to our login screen.
 
-**Update your `login_screen.dart`:**
+**Update your `/lib/features/login/login_screen.dart`:**
 
 ```dart
 import 'package:flutter/material.dart';
@@ -772,7 +772,7 @@ void _toggleMode() {
 
 Let's make our login screen more visually appealing with a beautiful gradient background.
 
-**Update the Container in your `login_screen.dart`:**
+**Update the Container in your `/lib/features/login/login_screen.dart`:**
 
 ```dart
 @override
@@ -918,6 +918,102 @@ void dispose() {
 - **CurvedAnimation**: Adds easing curves for natural movement
 - **FadeTransition**: Animates opacity changes
 - **SingleTickerProviderStateMixin**: Provides animation frame updates
+
+---
+
+### 💻 Step 6.5: Fix Full-Screen Background Issue
+
+**Problem:** The gradient background doesn't fill the entire screen, leaving white/default areas visible.
+
+| befoe                                | After                                          |
+|--------------------------------------|------------------------------------------------|
+| ![login.png](images/login/login.png) | ![login_full.png](images/login/login_full.png) |
+
+
+
+
+**Solution:** We need to ensure our Container takes up the full screen space and the content can scroll properly.
+
+#### 🔧 What we need to fix:
+
+1. **Container sizing**: Make the Container fill the entire screen
+2. **Scrollable content**: Ensure content can scroll while keeping the background fixed
+3. **Safe area handling**: Account for system UI (status bar, navigation bar)
+
+#### 📝 Update your LoginScreen build method:
+
+**In** `/lib/features/login/login_screen.dart`, **replace** the entire `build` method:
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Container(
+      // 🎯 Force container to fill entire screen
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF1A1B2E), // Dark blue
+            Color(0xFF16213E), // Medium blue
+            Color(0xFF0F3460), // Deep blue
+          ],
+        ),
+      ),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          // 🎯 Ensure scrollable content fills available space
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              // Calculate minimum height excluding system UI
+              minHeight: MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const LoginHeader(),
+                  FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: LoginForm(
+                      isLoginMode: _isLoginMode,
+                      emailController: _emailController,
+                      passwordController: _passwordController,
+                      confirmPasswordController: _confirmPasswordController,
+                      onLoginSuccess: _handleLoginSuccess,
+                      onSignUpSuccess: _handleSignUpSuccess,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  LoginBottom(
+                    isLoginMode: _isLoginMode,
+                    onToggleMode: _toggleMode,
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+```
+
+#### 🧠 Why this works:
+
+- **`height/width: MediaQuery...`** → Forces Container to fill entire screen
+- **`ConstrainedBox`** → Ensures content has minimum height to fill screen
+- **`SingleChildScrollView`** → Allows scrolling when keyboard appears
+- **`SafeArea`** → Respects system UI boundaries
+- **Background stays fixed** → Gradient covers entire screen even when scrolling
 
 ---
 

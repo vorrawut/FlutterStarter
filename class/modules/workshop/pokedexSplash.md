@@ -240,7 +240,7 @@ Widget build(BuildContext context) {
 
 In the Pokedex sample app, Lottie and assets are already configured:
 
-File: `class/pokedex/pubspec.yaml`
+File: `pubspec.yaml`
 
 ```yaml
 dependencies:
@@ -267,6 +267,8 @@ Then **replace the Text widget** in your build method with the Lottie animation:
 ```dart
 child: Center(
   child: SizedBox(
+    height: 150,
+    width: 150,
     child: Lottie.asset('assets/pokeball_animation.json'),
   ),
 ),
@@ -383,6 +385,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: SafeArea(
           child: Center(
             child: SizedBox(
+              height: 150,
+              width: 150,
               child: Lottie.asset('assets/pokeball_animation.json'),
             ),
           ),

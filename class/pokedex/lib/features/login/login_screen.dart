@@ -48,6 +48,8 @@ class _LoginScreenState extends State<LoginScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -57,30 +59,38 @@ class _LoginScreenState extends State<LoginScreen>
         ),
         child: SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const LoginHeader(),
-                  FadeTransition(
-                    opacity: _fadeAnimation,
-                    child: LoginForm(
-                      isLoginMode: _isLoginMode,
-                      emailController: _emailController,
-                      passwordController: _passwordController,
-                      confirmPasswordController: _confirmPasswordController,
-                      onLoginSuccess: _handleLoginSuccess,
-                      onSignUpSuccess: _handleSignUpSuccess,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight:
+                    MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const LoginHeader(),
+                    FadeTransition(
+                      opacity: _fadeAnimation,
+                      child: LoginForm(
+                        isLoginMode: _isLoginMode,
+                        emailController: _emailController,
+                        passwordController: _passwordController,
+                        confirmPasswordController: _confirmPasswordController,
+                        onLoginSuccess: _handleLoginSuccess,
+                        onSignUpSuccess: _handleSignUpSuccess,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 30),
-                  LoginBottom(
-                    isLoginMode: _isLoginMode,
-                    onToggleMode: _toggleMode,
-                  ),
-                  const SizedBox(height: 20),
-                ],
+                    const SizedBox(height: 30),
+                    LoginBottom(
+                      isLoginMode: _isLoginMode,
+                      onToggleMode: _toggleMode,
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
               ),
             ),
           ),
