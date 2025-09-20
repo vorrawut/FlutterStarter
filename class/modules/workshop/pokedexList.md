@@ -215,16 +215,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:pokedex/core/constants/routes.dart';
 
 class _Pokemon {
-  const _Pokemon({
-    required this.id,
-    required this.name,
-    required this.imageUrl,
-  });
+  const _Pokemon({required this.name, required this.imageUrl});
 
-  final int id;
   final String name;
   final String imageUrl;
 }
@@ -264,7 +258,6 @@ class _ListScreenState extends State<ListScreen> {
       final id =
           int.parse(url.split('/').where((segment) => segment.isNotEmpty).last);
       return _Pokemon(
-        id: id,
         name: name,
         imageUrl:
             'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png',
@@ -294,10 +287,6 @@ class _ListScreenState extends State<ListScreen> {
                 leading: Image.network(poke.imageUrl,
                     width: 56, height: 56, fit: BoxFit.cover),
                 title: Text(poke.name),
-                onTap: () {
-                  Navigator.pushNamed(context, Routes.pokemonDetail,
-                      arguments: poke.id);
-                },
               );
             },
           );
@@ -306,6 +295,7 @@ class _ListScreenState extends State<ListScreen> {
     );
   }
 }
+
 ```
 
 ## Stretch goals
