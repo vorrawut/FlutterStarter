@@ -39,13 +39,14 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   Future<PokemonDetail> _fetchPokemonDetail() async {
-    final uri = Uri.parse('https://pokeapi.co/api/v2/pokemon/$widget.id');
+    final uri = Uri.parse('https://pokeapi.co/api/v2/pokemon/${widget.id}');
     final res = await http.get(uri);
     if (res.statusCode != 200) throw Exception('Failed to load Pokémon');
     final body = jsonDecode(res.body) as Map<String, dynamic>;
     return PokemonDetail(
       name: body['name'] as String,
-      imageUrl: body['imageUrl'] as String,
+      imageUrl:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${widget.id}.png',
       weight: body['weight'] as int,
       height: body['height'] as int,
     );
