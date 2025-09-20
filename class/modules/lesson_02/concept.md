@@ -1,4 +1,4 @@
-# 🍎 Flutter on macOS (Android Ready)
+# 🍎 Flutter (Android Ready)
 
 ## 🎯 Lesson Goals
 
@@ -73,7 +73,7 @@
 ## Create and Run Your First Project
 ```bash
 mkdir myFlutterProject
-fvm flutter create pokedex  --platforms android,ios, web
+fvm flutter create pokedex --platforms android,ios, web
 cd pokedex
 ```
 Pick your emulator or physical device when prompted.

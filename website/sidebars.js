@@ -34,7 +34,7 @@ const sidebars = {
           items: [
             'modules/lesson_02/concept',
             // 'modules/lesson_02/workshop_02',
-            'modules/lesson_02/diagram',
+            // 'modules/lesson_02/diagram',
           ],
         },
         {
