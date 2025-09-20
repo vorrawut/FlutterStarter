@@ -120,6 +120,14 @@ Inside `_PokemonListScreenState`, add the async helper that downloads the list a
 
 After the method is in place, go back to `initState` and replace the comment with `_pokemonFuture = _fetchPokemon();` so the list loads when the widget mounts.
 
+```dart
+@override
+  void initState() {
+    super.initState();
+    _pokemonFuture = _fetchPokemon();
+  }
+```
+
 ### 3d. Render the loading, error, and success states
 Use `FutureBuilder` in `build` so the UI reacts to the future without manual state tracking.
 ```dart
